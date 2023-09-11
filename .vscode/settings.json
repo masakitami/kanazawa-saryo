@@ -1,0 +1,33 @@
+// {
+//   "cSpell.words": ["astro", "astrojs", "classname", "tailwindcss"],
+//   "editor.defaultFormatter": "esbenp.prettier-vscode",
+//   "editor.formatOnSave": true,
+//   "editor.codeActionsOnSave": {
+//     "source.fixAll.eslint": true
+//   },
+//   "eslint.workingDirectories": ["./astro-orelop-cli"]
+// }
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ],
+  "cSpell.words": [
+    "astro",
+    "astrojs",
+    "classname",
+    "compat",
+    "microcms",
+    "preact",
+    "tailwindcss",
+    "tsconfigs",
+    "typekit"
+  ],
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint"
+  ]
+}
