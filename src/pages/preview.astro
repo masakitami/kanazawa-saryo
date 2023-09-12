@@ -10,3 +10,9 @@ import Layout from '../layouts/Layout.astro';
     <BlogPreview client:only="preact" />
   </main>
 </Layout>
+
+<script>
+  import BlogPreview from '../libs/BlogPreview';
+
+  console.log(' tesut', BlogPreview);
+</script>
