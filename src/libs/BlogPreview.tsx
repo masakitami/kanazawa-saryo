@@ -13,15 +13,13 @@ export const BlogPreview = () => {
     ([, contentId, draftKey]) => getBlogDetail(contentId, { draftKey }),
   );
 
-  console.log('data', data);
-
   if (error) return <div>エラーが発生しました</div>;
 
   if (isLoading) return <div>読み込み中...</div>;
 
   return (
     <div>
-      <h1>{data?.title}</h1>
+      <h1>{data?.title}mmmmmmmkm</h1>
       <p>{data?.publishedAt ?? data?.createdAt}</p>
       <div dangerouslySetInnerHTML={{ __html: data?.content ?? '' }} />
 

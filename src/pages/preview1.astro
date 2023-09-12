@@ -1,0 +1,18 @@
+---
+import BlogPreview from '../libs/BlogPreview';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="My first blog with Astro">
+  <main>
+    <!-- client:onlyがポイント -->
+    <div>テストです</div>
+    <BlogPreview client:only="preact" />
+  </main>
+</Layout>
+
+<script>
+  import BlogPreview from '../libs/BlogPreview';
+
+  console.log(' tesut', BlogPreview);
+</script>
