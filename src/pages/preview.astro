@@ -1,47 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getBlogs } from '../libs/microcms';
-const response = await getBlogs({ fields: ['id', 'title'] });
+import { getBlogs, getBlogDetail } from '../libs/microcms';
+
+// ==================== 修正箇所 ここから ====================
+
+// サーバーサイドレンダリングを有効にする
+export const prerender = false;
+
+let blogId;
+let draftKey;
+let blog;
+
+// URLパラメータを取得
+try {
+  if (Astro.request.method === 'GET') {
+    const url = new URL(Astro.request.url);
+    const params = new URLSearchParams(url.search);
+    blogId = params.get('blogId');
+    draftKey = params.get('draftKey') || undefined;
+  }
+} catch (error) {
+  console.error(error);
+}
+
+// ブログIDがない場合は404
+if (!blogId) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found',
+  });
+}
+
+// 記事の詳細情報を取得。取得できない場合は401を返す。
+try {
+  blog = await getBlogDetail(blogId as string, { draftKey: draftKey });
+} catch {
+  return new Response(null, {
+    status: 401,
+    statusText: 'Invalid Blog ID or Draft Key',
+  });
+}
+
+// ==================== 修正箇所 ここまで ====================
 ---
 
 <Layout title="My first blog with Astro">
-  <ul>
-    {
-      response.contents.map((blog: any) => {
-        return (
-          <li class="text-white">
-            <a href={blog.id}>{blog.title}</a>
-          </li>
-        );
-      })
-    }
-    <li>変更しました</li>
-  </ul>
   <main>
-    <p class="text-white">これはテストです</p>
-    <h1 class="title"></h1>
-    <p class="publishedAt"></p>
-    <div class="post"></div>
+    <h1 class="title">{blog.title}</h1>
+    <p class="publishedAt">公開日時：{blog.publishedAt}</p>
+    <div class="post" set:html={blog.content} />
   </main>
 </Layout>
 
-<script>
-  import { getBlogDetail } from '../libs/microcms';
-
-  const params = new URLSearchParams(window.location.search);
-  const contentId = params.get('contentId');
-  const draftKey = params.get('draftKey');
-
-  if (contentId && draftKey) {
-    getBlogDetail(contentId, { draftKey }).then((data) => {
-      const titleElement = document.querySelector('.title');
-      const publishedAtElement = document.querySelector('.publishedAt');
-      const postElement = document.querySelector('.post');
-
-      titleElement && (titleElement.textContent = data.title);
-      publishedAtElement &&
-        (publishedAtElement.textContent = data.publishedAt ?? data.createdAt);
-      postElement && (postElement.innerHTML = data.content);
-    });
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
   }
-</script>
+</style>
