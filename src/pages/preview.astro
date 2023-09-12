@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
 
   // if (contentId && draftKey) {
   getBlogDetail(contentId, { draftKey }).then((data) => {
-    console.log('data=========', data.contents);
+    console.log('data=========', data);
     const titleElement = document.querySelector('.title');
     const publishedAtElement = document.querySelector('.publishedAt');
     const postElement = document.querySelector('.post');
