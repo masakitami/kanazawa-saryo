@@ -27,3 +27,5 @@ export const BlogPreview = () => {
     </div>
   );
 };
+
+export default BlogPreview;
