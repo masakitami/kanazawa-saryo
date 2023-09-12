@@ -15,8 +15,8 @@ import Layout from '../layouts/Layout.astro';
   import { getBlogDetail } from '../libs/microcms';
 
   const params = new URLSearchParams(window.location.search);
-  const contentId = params.get('blogId') || undefined;
-  const draftKey = params.get('draftKey') || undefined;
+  const contentId = params.get('blogId');
+  const draftKey = params.get('draftKey');
   const a = getBlogDetail(contentId, { draftKey });
   console.log('=======確認', a);
   console.log('=======コンテンt', contentId);
