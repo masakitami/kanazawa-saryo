@@ -17,8 +17,6 @@ import Layout from '../layouts/Layout.astro';
   const params = new URLSearchParams(window.location.search);
   const contentId = params.get('blogId');
   const draftKey = params.get('draftKey');
-  const a = getBlogDetail(contentId, { draftKey });
-  console.log('=======確認', a);
   console.log('=======コンテンt', contentId);
   console.log('ドラフト', draftKey);
 
