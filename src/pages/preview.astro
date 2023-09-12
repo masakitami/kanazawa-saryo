@@ -15,23 +15,24 @@ import Layout from '../layouts/Layout.astro';
   import { getBlogDetail } from '../libs/microcms';
 
   const params = new URLSearchParams(window.location.search);
-  const contentId = params.get('contentId') || undefined;
+  const contentId = params.get('blogId') || undefined;
   const draftKey = params.get('draftKey') || undefined;
   const a = getBlogDetail(contentId, { draftKey });
   console.log('=======確認', a);
   console.log('=======コンテンt', contentId);
-  console.log('ドラフト======', draftKey);
+  console.log('ドラフト', draftKey);
 
-  if (contentId && draftKey) {
-    getBlogDetail(contentId, { draftKey }).then((data) => {
-      const titleElement = document.querySelector('.title');
-      const publishedAtElement = document.querySelector('.publishedAt');
-      const postElement = document.querySelector('.post');
+  // if (contentId && draftKey) {
+  getBlogDetail(contentId, { draftKey }).then((data) => {
+    console.log('data=========', data.contents);
+    const titleElement = document.querySelector('.title');
+    const publishedAtElement = document.querySelector('.publishedAt');
+    const postElement = document.querySelector('.post');
 
-      titleElement && (titleElement.textContent = data.title);
-      publishedAtElement &&
-        (publishedAtElement.textContent = data.publishedAt ?? data.createdAt);
-      postElement && (postElement.innerHTML = data.content);
-    });
-  }
+    titleElement && (titleElement.textContent = data.title);
+    publishedAtElement &&
+      (publishedAtElement.textContent = data.publishedAt ?? data.createdAt);
+    postElement && (postElement.innerHTML = data.content);
+  });
+  // }
 </script>

@@ -23,8 +23,8 @@
 //SDK利用準備
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 const client = createClient({
-  serviceDomain: 'yakumo',
-  apiKey: 'UiCu5hhMMF9iE4KtW0crFUAzR4WNYGR80VfS',
+  serviceDomain: import.meta.env.PUBLIC_SERVICE_DOMAIN,
+  apiKey: import.meta.env.PUBLIC_API_KEY,
 });
 
 //型定義
