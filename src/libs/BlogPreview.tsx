@@ -19,7 +19,7 @@ export const BlogPreview = () => {
 
   return (
     <div>
-      <h1>{data?.title}mmmmmmmkm</h1>
+      <h1>{data?.title}kkkk</h1>
       <p>{data?.publishedAt ?? data?.createdAt}</p>
       <div dangerouslySetInnerHTML={{ __html: data?.content ?? '' }} />
 
