@@ -5,7 +5,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="My first blog with Astro">
   <main>
-    <!-- client:onlyがポイント -->
-    <BlogPreview client:only />
+    <div>
+      <BlogPreview client:only />
+    </div>
   </main>
 </Layout>
