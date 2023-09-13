@@ -3,7 +3,7 @@ import { getBlogDetail } from './microcms';
 
 export const BlogPreview = () => {
   const params = new URLSearchParams(window.location.search);
-  const contentId = params.get('contentId');
+  const contentId = params.get('blogId');
   const draftKey = params.get('draftKey');
 
   const { data, error, isLoading, isValidating } = useSWR(
@@ -18,7 +18,7 @@ export const BlogPreview = () => {
   if (isLoading) return <div>読み込み中...</div>;
 
   return (
-    <div>
+    <div class="text-white">
       <h1>{data?.title}kkkk</h1>
       <p>{data?.publishedAt ?? data?.createdAt}</p>
       <div dangerouslySetInnerHTML={{ __html: data?.content ?? '' }} />
