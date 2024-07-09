@@ -21,16 +21,13 @@ const { items: articles } = await newtClient.getContents<Article>({
       opacity: 0;
       transition: opacity 2s;
     }
-    * {
-      color: white;
-    }
   </style>
   <main class="transition-fade overflow-hidden">
     <video class="size-full" id="loading-animation" autoplay muted>
       <source src="./images/loading.mp4" type="video/mp4" />
        Your browser does not support the video tag.
     </video>
-    <h2>newtでブログ</h2>
+    <h2 class="text-white">newtでブログ</h2>
     <ul>
       {
         articles.map((article) => {
@@ -52,15 +49,8 @@ const { items: articles } = await newtClient.getContents<Article>({
           );
         })
       } -->
-      <li>変更しました</li>
       <!-- <p class="text-fdf text-white"><a href="/page02">page02へ移動</a></p> -->
     </ul>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
-      above.
-    </p>
   </main>
 </Layout>
 <script>
