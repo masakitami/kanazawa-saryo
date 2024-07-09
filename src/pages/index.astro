@@ -67,7 +67,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   const video = document.getElementById('loading-animation');
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (video) {
+    if (video instanceof HTMLVideoElement) {
       video.play();
     }
   });
