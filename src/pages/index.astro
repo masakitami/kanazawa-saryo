@@ -15,7 +15,7 @@ const { items: articles } = await newtClient.getContents<Article>({
 // const response = await getBlogs({ fields: ['id', 'title'] });
 ---
 
-<Layout title="トップページです">
+<Layout title="トップページ">
   <style>
     .fade-out {
       opacity: 0;
@@ -54,17 +54,5 @@ const { items: articles } = await newtClient.getContents<Article>({
   </main>
 </Layout>
 <script>
-  const video = document.getElementById('loading-animation');
-
-  document.addEventListener('DOMContentLoaded', function () {
-    if (video instanceof HTMLVideoElement) {
-      video.play();
-    }
-  });
-
-  if (video)
-    video.addEventListener('ended', function () {
-      console.log('video終わりました');
-      video.classList.add('fade-out');
-    });
+  console.log('記入可能性');
 </script>
