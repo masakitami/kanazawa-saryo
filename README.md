@@ -1,6 +1,6 @@
 # 金沢茶寮リブランディング課題
 
-![screenshot](https://github.com/masakitami/kanazawa-saryo/main/public/images/ogp.png)
+![screenshot](https://github.com/masakitami/kanazawa-saryo/public/images/ogp.png)
 
 ## 概要
 金沢茶寮リブランディングの開発環境です。フロントエンドツールには「vite」を利用しているため、高速に静的サイトを開発することが可能です。
