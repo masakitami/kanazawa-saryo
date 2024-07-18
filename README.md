@@ -20,7 +20,7 @@
 - git
 
 ## アーキテクチャー
-![screenshot](https://github.com/masakitami/kanazawa-saryo/blob/main/public/images/architecture.png.png)
+![screenshot](https://github.com/masakitami/kanazawa-saryo/blob/main/public/images/architecture.png)
 金沢茶寮様のWEBサイトリブランディングにあたり、JAMstackを導入しました。これにより、バックエンドシステムが不要となり、ユーザーフレンドリーでありながら、ページの読み込み速度が非常に速くなるという利点があります。そのため、ユーザーにとって快適な閲覧体験を提供することができます。
 
 
