@@ -8,7 +8,7 @@
 
 - [既存サイト](https://www.kanazawasaryo.jp/)
 - [新サイトのデザインデータ(figma)](https://x.gd/bUZGC)
-- [新サイトのテストサイト](https://x.gd/bUZGC)
+- [新サイトのテストサイト](https://kanazawa-saryo.vercel.app/)
 
 ## 準備
 ローカル環境で利用するには以下のツールをマシンにインストールしておく必要があります。
