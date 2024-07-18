@@ -19,5 +19,10 @@
 - node.js >= 18.16.0
 - git
 
+## アーキテクチャー
+![screenshot](https://github.com/masakitami/kanazawa-saryo/blob/main/public/images/architecture.png.png)
+金沢茶寮様のWEBサイトリブランディングにあたり、JAMstackを導入しました。これにより、バックエンドシステムが不要となり、ユーザーフレンドリーでありながら、ページの読み込み速度が非常に速くなるという利点があります。そのため、ユーザーにとって快適な閲覧体験を提供することができます。
+
+
 ## デプロイ方法
 [Vercel](https://vercel.com/)とGithubをAPI連携させているためローカル環境からリモート環境にプッシュした時点で本番サイトにデプロイされます。
