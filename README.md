@@ -3,8 +3,8 @@
 ![screenshot](https://github.com/masakitami/kanazawa-saryo/blob/main/public/images/ogp.png)
 
 ## 🖋 概要
-金沢茶寮リブランディングのサイトの開発環境です。フロントエンドツールには「vite」を利用しているため、高速に静的サイトを開発することが可能です。
-また、フレームワークはAstroを採用してホスティングはvercelを使用しました。
+金沢茶寮さまWEBリブランディングの開発環境です。フロントエンドツールには「vite」を利用しているため、高速に静的サイトを開発することが可能です。
+また、フレームワークはAstroを採用し、ホスティングサービスはVercelを使用しました。
 
 - [既存サイト](https://www.kanazawasaryo.jp/)
 - [新サイトのデザインデータ(figma)](https://x.gd/bUZGC)
