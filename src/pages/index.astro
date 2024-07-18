@@ -16,17 +16,7 @@ const { items: articles } = await newtClient.getContents<Article>({
 ---
 
 <Layout title="トップページ">
-  <style>
-    .fade-out {
-      opacity: 0;
-      transition: opacity 2s;
-    }
-  </style>
   <main class="overflow-hidden">
-    <video class="size-full" id="loading-animation" autoplay muted>
-      <source src="./images/loading.mp4" type="video/mp4" />
-       Your browser does not support the video tag.
-    </video>
     <h2 class="text-white">newtでブログ</h2>
     <ul>
       {
@@ -54,5 +44,5 @@ const { items: articles } = await newtClient.getContents<Article>({
   </main>
 </Layout>
 <script>
-  console.log('記入可能性');
+  console.log('記入可能');
 </script>
