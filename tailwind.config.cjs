@@ -31,6 +31,8 @@ module.exports = {
         'ks-bg': '#EAEAEB',
         'ks-grey': '#FCFDFE',
         'ks-black': '#070707',
+        'invert(ks-white)': '#030201',
+        'invert(ks-black)': '#F8F8F8',
         'ks-white': '#FCFDFE',
       },
       fontFamily: {
