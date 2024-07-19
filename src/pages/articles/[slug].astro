@@ -26,6 +26,6 @@ const { article } = Astro.props;
   }
 </style>
 
-<Layout title="Article" />
+<Layout title="Article" description="test" keyword="test" />
 <h1>{article.title}</h1>
 <article set:html={article.body} />
