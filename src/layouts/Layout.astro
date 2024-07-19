@@ -56,29 +56,34 @@ const { title, description, keyword } = Astro.props;
     }
   </style>
   <body>
-    <header class="sticky">
+    <!-- ヘッダー -->
+    <header class="sticky top-0 z-10 mix-blend-difference max-md:h-0">
       <div
         class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
       >
         <h1 class="w-[max(11.5vw,8.75rem)]">
-          <img
-            src="/images/logo.svg"
-            width="185"
-            height="43"
-            decoding="async"
-            alt="金沢茶寮"
-            class="object-cover"
-          />
+          <a href="/">
+            <img
+              src="/images/logo.svg"
+              width="185"
+              height="43"
+              decoding="async"
+              alt="金沢茶寮"
+              class="object-cover"
+            />
+          </a>
         </h1>
         <button type="button">
-          <div class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black">
+          <span
+            class="grid grid-cols-[auto,1fr] place-items-center bg-invert(ks-black)"
+          >
             <a
-              class="mr-[max(2vw,1.2rem)] py-[max(1vw,0.40rem)] pl-[max(4.4vw,2.7rem)] text-jpTextBase text-ks-white"
+              class="mr-[max(2vw,1rem)] box-border py-[max(1vw,0.40rem)] pl-[max(4.4vw,2.7rem)] text-jpTextBase text-invert(ks-white)"
               href="">体験予約</a
             >
-            <span class="block w-[max(3vw,1rem)] pr-[max(1.25vw,1rem)]"
+            <span class="mr-[max(1.25vw,1rem)] block w-[max(1.1vw,1rem)]"
               ><img
-                src="/images/chevron-white.svg"
+                src="/images/invertedChevron.svg"
                 width="13"
                 height="11"
                 decoding="async"
@@ -86,10 +91,11 @@ const { title, description, keyword } = Astro.props;
                 alt=""
               /></span
             >
-          </div>
+          </span>
         </button>
       </div>
     </header>
+    <!-- ヘッダー -->
     <slot />
     <script>
       const minWidth400fixed = () => {
