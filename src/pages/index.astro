@@ -11,38 +11,29 @@ const { items: articles } = await newtClient.getContents<Article>({
     select: ['title', 'slug', 'body'],
   },
 });
-
-// const response = await getBlogs({ fields: ['id', 'title'] });
 ---
 
-<Layout title="トップページ">
-  <main class="overflow-hidden">
-    <h2 class="text-white">newtでブログ</h2>
-    <ul>
+<Layout
+  title="kanazawa saryo"
+  description="金沢茶寮は自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。"
+  keyword="金沢、カフェ、金沢塗り、伝統工芸"
+>
+  <!-- メインビジュアル -->
+  <section></section>
+  <!-- /メインビジュアル -->
+  <!-- <ul>
       {
         articles.map((article) => {
           return (
             <li>
-              <a class="text-white" href={`articles/${article.slug}`}>
-                {article.title}
-              </a>
+              <a href={`articles/${article.slug}`}>{article.title}</a>
             </li>
           );
         })
       }
-      <!-- {
-        response.contents.map((blog: any) => {
-          return (
-            <li class="text-white">
-              <a href={blog.id}>{blog.title}</a>
-            </li>
-          );
-        })
-      } -->
-      <!-- <p class="text-fdf text-white"><a href="/page02">page02へ移動</a></p> -->
-    </ul>
-  </main>
+    </ul> -->
 </Layout>
+
 <script>
   console.log('記入可能');
 </script>
