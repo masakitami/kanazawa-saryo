@@ -1,54 +1,48 @@
 ---
+import a from '../../dist/_astro/client.cdcbec7e';
+
 interface Props {
   title: string;
+  description: string;
+  keyword: string;
 }
 
-const { title } = Astro.props;
+const { title, description, keyword } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/logo-ogp.svg"
+    />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keyword} />
+    <meta name="viewport" content="width=400" initial-scale='1.0"/' />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://kanazawa-saryo.com" />
+    <meta name="twitter:title" content="金沢茶寮" />
+    <meta
+      name="twitter:description"
+      content="金沢茶寮は自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。"
+    />
+    <meta name="twitter:image" content="https://kanazawa-saryo.com/ogp.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Noto+Serif+JP:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
-  </body>
-
   <style is:global>
-    :root {
-      --accent: 136, 58, 234;
-      --accent-light: 224, 204, 250;
-      --accent-dark: 49, 10, 101;
-      --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-      );
-    }
-    html {
-      font-family: system-ui, sans-serif;
-      background: #13151a;
-      background-size: 224px;
-    }
-    code {
-      font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
-    }
     html.is-changing .transition-fade {
       transition: 0.4s;
       opacity: 1;
@@ -58,4 +52,43 @@ const { title } = Astro.props;
       transform: translateY(20px);
     }
   </style>
+  <body>
+    <!-- ヘッダー-->
+    <header class="sticky">
+      <div
+        class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
+      >
+        <h1 class="w-[max(11.5vw,8.75rem)]">
+          <img
+            src="/images/logo.svg"
+            width="185"
+            height="43"
+            decoding="async"
+            alt="金沢茶寮"
+            class="block w-full object-cover"
+          />
+        </h1>
+        <button type="button">
+          <div class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black">
+            <a
+              class="mr-[max(2vw,1.2rem)] py-[max(1vw,0.40rem)] pl-[max(4.4vw,2.7rem)] text-jpTextBase text-ks-white"
+              href="">体験予約</a
+            >
+            <span class="block pr-[max(1.25vw,1rem)]"
+              ><img
+                src="/images/chevron-white.svg"
+                width="13"
+                height="11"
+                decoding="async"
+                class="block w-[max(1.2vw,1rem)] object-cover"
+                alt=""
+              /></span
+            >
+          </div>
+        </button>
+      </div>
+    </header>
+    <!-- /ヘッダー-->
+    <slot />
+  </body>
 </html>
