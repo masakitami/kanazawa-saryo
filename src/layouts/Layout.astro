@@ -22,7 +22,10 @@ const { title, description, keyword } = Astro.props;
     />
     <meta name="description" content={description} />
     <meta name="keywords" content={keyword} />
-    <meta name="viewport" content="width=400" initial-scale='1.0"/' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="https://kanazawa-saryo.com" />
@@ -53,7 +56,6 @@ const { title, description, keyword } = Astro.props;
     }
   </style>
   <body>
-    <!-- ヘッダー-->
     <header class="sticky">
       <div
         class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
@@ -65,7 +67,7 @@ const { title, description, keyword } = Astro.props;
             height="43"
             decoding="async"
             alt="金沢茶寮"
-            class="block w-full object-cover"
+            class="object-cover"
           />
         </h1>
         <button type="button">
@@ -74,13 +76,13 @@ const { title, description, keyword } = Astro.props;
               class="mr-[max(2vw,1.2rem)] py-[max(1vw,0.40rem)] pl-[max(4.4vw,2.7rem)] text-jpTextBase text-ks-white"
               href="">体験予約</a
             >
-            <span class="block pr-[max(1.25vw,1rem)]"
+            <span class="block w-[max(3vw,1rem)] pr-[max(1.25vw,1rem)]"
               ><img
                 src="/images/chevron-white.svg"
                 width="13"
                 height="11"
                 decoding="async"
-                class="block w-[max(1.2vw,1rem)] object-cover"
+                class="block w-full"
                 alt=""
               /></span
             >
@@ -88,7 +90,26 @@ const { title, description, keyword } = Astro.props;
         </button>
       </div>
     </header>
-    <!-- /ヘッダー-->
     <slot />
+    <script>
+      const minWidth400fixed = () => {
+        (function () {
+          const viewport = document.querySelector('meta[name="viewport"]');
+          function switchViewport() {
+            const value =
+              window.outerWidth > 400
+                ? 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+                : 'width=400';
+            if (viewport)
+              if (viewport.getAttribute('content') !== value) {
+                viewport.setAttribute('content', value);
+              }
+          }
+          window.addEventListener('resize', switchViewport, false);
+          switchViewport();
+        })();
+      };
+      minWidth400fixed();
+    </script>
   </body>
 </html>
