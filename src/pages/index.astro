@@ -13,15 +13,6 @@ const { items: articles } = await newtClient.getContents<Article>({
 });
 ---
 
-<style>
-  img {
-    grid-column: image;
-    inline-size: 100%;
-    min-block-size: 100%; /* 間延びを防止する */
-    object-fit: cover;
-  }
-</style>
-
 <Layout
   title="金沢茶寮"
   description="金沢茶寮は自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。"
@@ -29,16 +20,14 @@ const { items: articles } = await newtClient.getContents<Article>({
 >
   <!-- メインビジュアルー -->
   <section id="mainvisual">
-    <div class="c-section h-svh pb-[8svb] sm:px-c-gutter-x">
+    <div class="c-section h-[100svh] pb-[8svb] sm:px-c-gutter-x">
       <div
         role="img"
         class="sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure class="">
+        <figure>
           <img
-            width="432"
-            height="632"
-            class="aspect-[400/600] md:aspect-[445/724]"
+            class="aspect-[445/724] w-full"
             src="/images/mainvisual_1.png"
             alt=""
           />
@@ -50,7 +39,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <h2
           lang="en"
-          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl font-medium leading-[1em] tracking-[-0.01em] sm:mt-0"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl font-[500] tracking-[-0.01em] sm:mt-0"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
@@ -59,7 +48,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         <p
           role="heading"
           aria-level="2"
-          class="pl-[max(.85vw,.65em)] text-[max(1.125vw,theme(fontSize.jpTextBase))] leading-[2.15]"
+          class="pl-[max(.85vw,.65em)] text-[max(1.125vw,theme(fontSize.jpTextBase))] leading-[max(215%,1.78rem)]"
         >
           五感を解き放つ、“塗って、味わい、感じる”<br
             translate="no"
@@ -91,7 +80,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       <div
         lang="en"
         aria-hidden="true"
-        class="w-fit animate-[marquee_30s_linear_infinite] whitespace-nowrap text-enText10xl leading-none text-ks-white"
+        class="w-fit animate-[marquee_20s_linear_infinite] whitespace-nowrap text-enText10xl leading-none text-ks-white"
       >
         &nbsp;CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
         CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
