@@ -25,9 +25,9 @@ const { items: articles } = await newtClient.getContents<Article>({
         role="img"
         class="sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure>
+        <figure class="">
           <img
-            class="aspect-[445/724] w-full"
+            class="aspect-[400/630] w-full object-cover md:aspect-[445/724]"
             src="/images/mainvisual_1.png"
             alt=""
           />
@@ -39,7 +39,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <h2
           lang="en"
-          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl tracking-[-0.01em] sm:mt-0"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl leading-[1em] tracking-[-0.01em] sm:mt-0"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
