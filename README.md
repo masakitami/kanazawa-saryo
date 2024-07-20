@@ -21,7 +21,7 @@
 
 ## 📖 WEBアーキテクチャー
 ![screenshot](https://github.com/masakitami/kanazawa-saryo/blob/main/public/images/architecture.png)
-金沢茶寮さまのWEBサイトのリブランディングにあたり、JAMstackを導入しました。これにより、バックエンドシステムが不要となり、ユーザーフレンドリーでありながら、ページの読み込み速度が非常に速くなるという利点とセキュリティの堅牢さを担保できるため、ユーザーにとって快適な閲覧体験を提供することができます。CMSはHeadlessCMSの[NEWT](https://www.newt.so/)を採用しました。
+金沢茶寮さまのWEBサイトのリブランディングにあたり、WordPressではなくJAMstackを導入しました。これにより、バックエンドシステムが不要となり、ユーザーフレンドリーでありながら、ページの読み込み速度が非常に速くなるという利点とセキュリティの堅牢さを担保できるため、ユーザーにとって快適な閲覧体験を提供することができます。CMSはHeadlessCMSの[NEWT](https://www.newt.so/)を採用しました。
 
 
 ## 💨 デプロイ方法
