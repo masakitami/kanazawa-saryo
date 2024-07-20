@@ -22,10 +22,14 @@ const { items: articles } = await newtClient.getContents<Article>({
   <section id="mainvisual">
     <div class="c-section h-[100svh] bg-red-600 pb-[8svb] sm:px-c-gutter-x">
       <div
-        class="sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
+        class="h-fit sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure class="aspect-[400/580] h-[632px] w-full sm:aspect-[400/580]">
-          <img src="/images/mainvisual_1.png" alt="" />
+        <figure class="w-full sm:aspect-[400/580]">
+          <img
+            src="/images/mainvisual_1.png"
+            class="aspect-[400/632] sm:aspect-[454/724]"
+            alt=""
+          />
         </figure>
       </div>
 
@@ -34,7 +38,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <h2
           lang="en"
-          class="mb-[0.25em] w-fit text-enText7xl font-[500] leading-[1em] tracking-[-0.01em] sm:mt-0"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl font-[500] leading-[1em] tracking-[-0.01em] sm:mt-0"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
