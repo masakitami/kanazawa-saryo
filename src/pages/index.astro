@@ -14,29 +14,83 @@ const { items: articles } = await newtClient.getContents<Article>({
 ---
 
 <Layout
-  title="kanazawa saryo"
+  title="金沢茶寮"
   description="金沢茶寮は自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。"
   keyword="金沢、カフェ、金沢塗り、伝統工芸"
 >
   <!-- メインビジュアルー -->
   <section id="mainvisual">
-    <div
-      class="grid grid-cols-12 grid-rows-1 place-items-center gap-x-[max(6.6vw,1rem)] px-[max(4.8vw,1.5rem)]"
-    >
-      <div class="col-span-4 col-start-5">
+    <div class="c-section pb-[8svb] sm:px-c-gutter-x">
+      <div
+        role="img"
+        class="sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
+      >
         <figure>
-          <img src="/images/mainvisual_1.png" alt="" />
+          <img
+            class="aspect-[445/724] w-full"
+            src="/images/mainvisual_1.png"
+            alt=""
+          />
         </figure>
       </div>
-      <header class="col-span-2 col-start-1 align-middle">
-        <h2 lang="en" class="w-fit">
-          Unleash Your<br translate="no" aria-hidden="true" />Five Senses
+
+      <header
+        class="relative z-10 whitespace-nowrap pl-[1.5rem] sm:row-auto sm:translate-y-0 sm:content-normal sm:pb-[4svb] sm:pl-0 sm:pt-[7svb] md:pr-[max(12vw,3rem)] lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:grid lg:content-center lg:justify-end lg:py-0"
+      >
+        <h2
+          lang="en"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl tracking-[-0.01em] sm:mt-0"
+        >
+          Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
+            class="mr-[.09em]"
+            aria-hidden="true"></span>Five&nbsp;Senses
         </h2>
+        <p
+          role="heading"
+          aria-level="2"
+          class="pl-[max(.85vw,.2em)] text-[max(1.125vw,theme(fontSize.jpTextBase))] leading-[max(215%,1.78rem)]"
+        >
+          五感を解き放つ、“塗って、味わい、感じる”<br
+            translate="no"
+            aria-hidden="true"
+          />新感覚のアートカフェ
+        </p>
       </header>
+      <nav
+        class="col-span-full col-start-10 row-span-2 row-start-1 grid w-fit content-center"
+      >
+        <ol
+          role="list"
+          class="invisible h-0 text-jpTextBase lg:visible lg:h-auto [&>li]:whitespace-nowrap [&>li]:font-[200] [&>li]:leading-[300%]"
+        >
+          <li><a href="">01.コンセプト</a></li>
+          <li><a href="">02.体験内容と料金</a></li>
+          <li><a href="">03.アクセス</a></li>
+          <li><a href="">04.お知らせ</a></li>
+          <li><a href="">05.公式インスタグラム</a></li>
+        </ol>
+      </nav>
     </div>
   </section>
   <!-- /メインビジュアル -->
-  <!-- <ul>
+
+  <!-- コンセプトー -->
+  <section id="concept">
+    <div class="c-section overflow-hidden">
+      <div
+        lang="en"
+        aria-hidden="true"
+        class="w-fit animate-[marquee_15s_linear_infinite] whitespace-nowrap text-enText10xl leading-none text-ks-white"
+      >
+        &nbsp;CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
+        CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
+      </div>
+    </div>
+  </section>
+  <!-- コンセプトー -->
+</Layout>
+
+<!-- <ul>
       {
         articles.map((article) => {
           return (
@@ -47,7 +101,6 @@ const { items: articles } = await newtClient.getContents<Article>({
         })
       }
     </ul> -->
-</Layout>
 
 <script>
   console.log('記入可能');

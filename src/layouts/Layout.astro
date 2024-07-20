@@ -55,7 +55,7 @@ const { title, description, keyword } = Astro.props;
       transform: translateY(20px);
     }
   </style>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- ヘッダー -->
     <header class="sticky top-0 z-10 mix-blend-difference max-md:h-0">
       <div
@@ -70,6 +70,7 @@ const { title, description, keyword } = Astro.props;
               decoding="async"
               alt="金沢茶寮"
               class="object-cover"
+              aria-label="金沢茶寮の体験申込はこちらへ"
             />
           </a>
         </h1>
@@ -79,7 +80,8 @@ const { title, description, keyword } = Astro.props;
           >
             <a
               class="mr-[max(2vw,1rem)] box-border py-[max(1vw,0.40rem)] pl-[max(4.4vw,2.7rem)] text-jpTextBase text-invert(ks-white)"
-              href="">体験予約</a
+              href="/"
+              role="button">体験予約</a
             >
             <span class="mr-[max(1.25vw,1rem)] block w-[max(1.1vw,1rem)]"
               ><img
@@ -87,7 +89,7 @@ const { title, description, keyword } = Astro.props;
                 width="13"
                 height="11"
                 decoding="async"
-                class="block w-full"
+                class="w-full"
                 alt=""
               /></span
             >
