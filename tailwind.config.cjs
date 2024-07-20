@@ -100,6 +100,9 @@ module.exports = {
         '.content-auto': {
           contentVisibility: 'auto',
         },
+        '.u-sticky-for-grid': {
+          'align-self': 'start',
+        },
       });
       matchUtilities({
         intrincSize: (value) => {

@@ -77,7 +77,7 @@ const { items: articles } = await newtClient.getContents<Article>({
     <p
       lang="en"
       aria-hidden="true"
-      class="w-fit animate-[marquee_40s_linear_infinite] overflow-hidden whitespace-nowrap text-enText10xl font-light italic leading-none text-ks-white"
+      class="w-fit animate-[marquee_60s_linear_infinite] overflow-hidden whitespace-nowrap text-enText10xl font-light italic leading-none text-ks-white"
     >
       &nbsp;CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
     </p>
@@ -86,7 +86,9 @@ const { items: articles } = await newtClient.getContents<Article>({
   <!-- コンセプトー -->
   <section id="concept">
     <article class="c-section px-c-gutter-x">
-      <figure class="sticky col-span-6 col-start-1 hidden lg:block">
+      <figure
+        class="sticky top-[10vh] col-span-6 col-start-1 hidden pt-[11.2vw] u-sticky-for-grid sm:block"
+      >
         <img
           src="/images/artandcafe.svg"
           decoding="async"
@@ -96,7 +98,7 @@ const { items: articles } = await newtClient.getContents<Article>({
           class="w-full"
         />
       </figure>
-      <div class="relative z-10 col-span-5 col-start-8 lg:pr-[max(5.1vw)]">
+      <div class="relative z-10 col-span-5 col-start-8">
         <h2
           class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)]"
         >
@@ -106,7 +108,7 @@ const { items: articles } = await newtClient.getContents<Article>({
           class="text-[max(1.14vw,theme(Fontsize.jpTextSm))]/[max(2.6vw,1.75rem)]"
         > -->
         <div
-          class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(2.6vw,1.75rem)] [&>p]:mb-[max(3vw,1.5rem)]"
+          class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(2.6vw,1.75rem)] max-sm:pl-[29vw] lg:pr-[7.25rem] [&>p]:mb-[max(3vw,1.5rem)]"
         >
           <p>
             金沢茶寮は、自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。
@@ -121,13 +123,67 @@ const { items: articles } = await newtClient.getContents<Article>({
             ぜひ、伝統とモダンが交差しながら共存する金沢ならではの魅力が詰まった「塗り」を心ゆくまでお楽しみください。
           </p>
         </div>
+
+        <aside class="pr-0 pt-[max(3vw,3rem)] lg:pr-[5.1vw]">
+          <header class="mb-[max(3vw,2.5rem)]">
+            <h3 class="[&>span]:block [&>span]:text-center">
+              <span
+                class="mb-[.35em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)]"
+                lang="en">Supervisor</span
+              >
+              <span
+                class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1em]"
+                >監修者紹介</span
+              >
+            </h3>
+          </header>
+
+          <ul>
+            <li class="flex">
+              <figure>
+                <img
+                  decoding="async"
+                  width="165"
+                  height="165"
+                  src="/images/yoshiokasan.png"
+                  alt="金沢茶寮で働く吉岡さん"
+                />
+              </figure>
+              <h4>
+                <span>吉岡&nbsp;正義</span>
+                <span>よしおか&nbsp;まさよし</span>
+              </h4>
+              <p>
+                数多くの国外で活動するグローバル視点の陶芸作家。日本だけでなく世界各地の土でまだ見ぬ焼き物へと挑戦している。
+              </p>
+            </li>
+            <li class="flex">
+              <figure>
+                <img
+                  decoding="async"
+                  width="165"
+                  height="165"
+                  src="/images/matsuurasan.png"
+                  alt="金沢茶寮で働く松浦さん"
+                />
+              </figure>
+              <h4>
+                <span>松浦&nbsp;悠子</span>
+                <span>まつうら&nbsp;ゆうこ</span>
+              </h4>
+              <p>
+                金沢美術工芸大学院生。2019年9月にパリのgalerie
+                satelliteでも個展が開かれるなど、在学中からその才能を発揮。
+              </p>
+            </li>
+          </ul>
+        </aside>
       </div>
     </article>
+    <!-- コンセプトー -->
   </section>
-  <!-- コンセプトー -->
-</Layout>
 
-<!-- <ul>
+  <!-- <ul>
       {
         articles.map((article) => {
           return (
@@ -139,6 +195,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       }
     </ul> -->
 
-<script>
-  console.log('記入可能');
-</script>
+  <script>
+    console.log('記入可能');
+  </script>
+</Layout>
