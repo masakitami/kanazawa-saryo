@@ -57,35 +57,35 @@ const { title, description, keyword } = Astro.props;
   </style>
   <body>
     <!-- ヘッダー -->
-    <header class="sticky top-0 z-10 mix-blend-difference max-md:h-0">
+    <header class="sticky top-0 z-10 max-md:h-0">
       <div
         class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
       >
-        <h1 class="w-[max(11.5vw,8.75rem)]">
-          <a href="/">
-            <img
-              src="/images/logo.svg"
-              width="185"
-              height="43"
-              decoding="async"
-              alt="金沢茶寮"
-              class="object-cover"
-              aria-label="金沢茶寮の体験申込はこちらへ"
-            />
-          </a>
-        </h1>
+        <div class="bg-transparent mix-blend-difference">
+          <h1 class="w-[max(11.5vw,8.75rem)]">
+            <a href="/">
+              <img
+                src="/images/logo.svg"
+                width="185"
+                height="43"
+                decoding="async"
+                alt="金沢茶寮"
+                class="object-cover mix-blend-difference"
+                aria-label="金沢茶寮の体験申込はこちらへ"
+              />
+            </a>
+          </h1>
+        </div>
 
-        <div
-          class="grid grid-cols-[auto,1fr] place-items-center bg-invert(ks-black)"
-        >
+        <div class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black">
           <a
-            class="mr-[max(2vw,.8rem)] box-border py-[max(1vw,0.7rem)] pl-[max(4.4vw,2.2rem)] text-jpTextBase text-invert(ks-white)"
+            class="mr-[max(2vw,.8rem)] box-border py-[max(1vw,0.7rem)] pl-[max(4.4vw,2.2rem)] text-jpTextBase text-ks-white"
             href="/"
             role="button">体験予約</a
           >
           <span class="mr-[max(1.15vw,.75rem)] block w-[max(1.1vw,1rem)]"
             ><img
-              src="/images/invertedChevron.svg"
+              src="/images/chevron-white.svg"
               width="13"
               height="11"
               decoding="async"
