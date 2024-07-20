@@ -61,21 +61,19 @@ const { title, description, keyword } = Astro.props;
       <div
         class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
       >
-        <div class="bg-transparent mix-blend-difference">
-          <h1 class="w-[max(11.5vw,8.75rem)]">
-            <a href="/">
-              <img
-                src="/images/logo.svg"
-                width="185"
-                height="43"
-                decoding="async"
-                alt="金沢茶寮"
-                class="object-cover mix-blend-difference"
-                aria-label="金沢茶寮の体験申込はこちらへ"
-              />
-            </a>
-          </h1>
-        </div>
+        <h1 class="w-[max(11.5vw,8.75rem)]" class="">
+          <a href="/" class="w-[max(11.5vw,8.7rem)]">
+            <img
+              src="/images/logo.svg"
+              width="185"
+              height="43"
+              decoding="async"
+              alt="金沢茶寮"
+              class="w-full"
+              aria-label="金沢茶寮の体験申込はこちらへ"
+            />
+          </a>
+        </h1>
 
         <div class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black">
           <a

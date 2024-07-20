@@ -72,19 +72,57 @@ const { items: articles } = await newtClient.getContents<Article>({
     </div>
   </section>
   <!-- /メインビジュアル -->
-
+  <!-- 装飾 -->
+  <div class="overflow-hidden">
+    <p
+      lang="en"
+      aria-hidden="true"
+      class="w-fit animate-[marquee_40s_linear_infinite] overflow-hidden whitespace-nowrap text-enText10xl font-light italic leading-none text-ks-white"
+    >
+      &nbsp;CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
+    </p>
+  </div>
+  <!-- /装飾 -->
   <!-- コンセプトー -->
   <section id="concept">
-    <div class="c-section overflow-hidden">
-      <div
-        lang="en"
-        aria-hidden="true"
-        class="w-fit animate-[marquee_20s_linear_infinite] whitespace-nowrap text-enText10xl italic leading-none text-ks-white"
-      >
-        &nbsp;CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
-        CONCEPT&nbsp;CONCEPT&nbsp;CONCEPT
+    <article class="c-section px-c-gutter-x">
+      <figure class="sticky col-span-6 col-start-1 hidden lg:block">
+        <img
+          src="/images/artandcafe.svg"
+          decoding="async"
+          width="493"
+          height="272"
+          alt="金沢茶寮の体験の簡略図"
+          class="w-full"
+        />
+      </figure>
+      <div class="relative z-10 col-span-5 col-start-8 lg:pr-[max(5.1vw)]">
+        <h2
+          class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)]"
+        >
+          感性と創造力を<br translate="no" ari-hidden="true" />刺激する
+        </h2>
+        <!-- <p
+          class="text-[max(1.14vw,theme(Fontsize.jpTextSm))]/[max(2.6vw,1.75rem)]"
+        > -->
+        <div
+          class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(2.6vw,1.75rem)] [&>p]:mb-[max(3vw,1.5rem)]"
+        >
+          <p>
+            金沢茶寮は、自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。
+          </p>
+          <p>
+            金沢茶寮で体験できる金沢塗りの特徴は、吉岡正義(よしおかまさよし)氏と松浦悠子(まつうらゆうこ)氏が手掛ける陶器に、色鮮やかな１０種類以上の塗料を重ね塗りし、削りながら作り上げる技法にあります。
+          </p>
+          <p class="hidden lg:block">
+            この技法の背景には石川県で古くから伝えられている伝統工芸「九谷五彩(くたにごさい)」の限られた色彩にとらわれない独自の重ね塗り、磨き、削る技法を「九谷焼(くたにやき)」に取り入れるという挑戦があり、金沢の「塗り文化」に新たな風が吹いています。
+          </p>
+          <p>
+            ぜひ、伝統とモダンが交差しながら共存する金沢ならではの魅力が詰まった「塗り」を心ゆくまでお楽しみください。
+          </p>
+        </div>
       </div>
-    </div>
+    </article>
   </section>
   <!-- コンセプトー -->
 </Layout>
