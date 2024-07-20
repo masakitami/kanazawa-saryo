@@ -26,6 +26,7 @@ module.exports = {
         enText5xl: ['max(4vw,2.66rem)', 'max(108%,3.99rem)'],
         enText7xl: ['max(6vw,4rem)', 'max(108%,4rem)'],
         enText9xl: ['max(5vw,6rem)', 'max(100%,6.48rem)'],
+        enText10xl: ['max(12vw,6rem)', 'max(100%,6rem)'],
       },
       colors: {
         'ks-bg': '#EAEAEB',
@@ -40,16 +41,16 @@ module.exports = {
         en: ['Cormorant Garamond', 'serif'],
       },
       spacing: {
-        'common-gutter-x': 'max(12.6vw, 1.5rem)',
-        'common-gutter-y': 'max(9vw, 5rem)',
+        'c-gutter-x': 'max(4.8vw,1.5rem)',
+        'c-gutter-y': 'max(9vw, 5rem)',
       },
       keyframes: {
         marquee: {
           from: {
-            transform: 'translateX(0)',
+            transform: 'translateX(-50%)',
           },
           to: {
-            transform: 'translateX(var(--translate-x,-50%))',
+            transform: 'translateX(var(--translate-x,0%))',
           },
         },
       },
@@ -76,9 +77,16 @@ module.exports = {
       addBase({
         body: {
           'font-family': "'Noto Serif JP', 'Cormorant Garamond', 'serif'",
-          'font-weight': '300',
+          'font-weight': '200',
           'background-color': theme('colors.ks-bg'),
           color: theme('colors.ks-black'),
+        },
+        ':lang(en)': {
+          'font-family': "'Cormorant Garamond', 'serif'",
+        },
+        '.c-section': {
+          '@apply sm:grid sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-[max(2.6vw,1rem)]':
+            {},
         },
       });
       addComponents({});
