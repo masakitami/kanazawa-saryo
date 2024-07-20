@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        jpTextXs: ['0.75rem', '1.6rem'],
+        jpTextXs: ['0.8rem', '1.6rem'],
         jpTextSm: ['0.88rem', '1.49rem'],
         jpTextBase: ['max(1vw,0.8rem)', 'max(150%,1.6rem)'],
         jpTextLg: ['1.14rem', '1.98rem'],
