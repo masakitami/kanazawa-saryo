@@ -74,27 +74,26 @@ const { title, description, keyword } = Astro.props;
             />
           </a>
         </h1>
-        <button type="button">
-          <span
-            class="grid grid-cols-[auto,1fr] place-items-center bg-invert(ks-black)"
+
+        <div
+          class="grid grid-cols-[auto,1fr] place-items-center bg-invert(ks-black)"
+        >
+          <a
+            class="mr-[max(2vw,1rem)] box-border py-[max(1vw,0.40rem)] pl-[max(3.8vw,2.7rem)] text-jpTextBase text-invert(ks-white)"
+            href="/"
+            role="button">体験予約</a
           >
-            <a
-              class="mr-[max(2vw,1rem)] box-border py-[max(1vw,0.40rem)] pl-[max(3.8vw,2.7rem)] text-jpTextBase text-invert(ks-white)"
-              href="/"
-              role="button">体験予約</a
-            >
-            <span class="mr-[max(.55vw,1rem)] block w-[max(1.1vw,1rem)]"
-              ><img
-                src="/images/invertedChevron.svg"
-                width="13"
-                height="11"
-                decoding="async"
-                class="w-full"
-                alt=""
-              /></span
-            >
-          </span>
-        </button>
+          <span class="mr-[max(.55vw,1rem)] block w-[max(1.1vw,1rem)]"
+            ><img
+              src="/images/invertedChevron.svg"
+              width="13"
+              height="11"
+              decoding="async"
+              class="w-full"
+              alt=""
+            /></span
+          >
+        </div>
       </div>
     </header>
     <!-- ヘッダー -->

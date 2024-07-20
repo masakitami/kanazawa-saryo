@@ -24,7 +24,7 @@ module.exports = {
         enText3xl: ['2rem', '3rem'],
         enText4xl: ['2.66rem', '3.99rem'],
         enText5xl: ['max(4vw,2.66rem)', 'max(108%,3.99rem)'],
-        enText7xl: ['max(6vw,4rem)', 'max(108%,3.5rem)'],
+        enText7xl: ['max(6vw,4rem)', 'max(108%,3.2rem)'],
         enText9xl: ['max(5vw,6rem)', 'max(100%,6.48rem)'],
         enText10xl: ['max(12vw,6rem)', 'max(100%,6rem)'],
       },
