@@ -13,6 +13,15 @@ const { items: articles } = await newtClient.getContents<Article>({
 });
 ---
 
+<style>
+  img {
+    inline-size: 100%;
+    block-size: 0; /* 間延びを防止する */
+    min-block-size: 100%; /* 間延びを防止する */
+    object-fit: cover;
+  }
+</style>
+
 <Layout
   title="金沢茶寮"
   description="金沢茶寮は自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。"
@@ -39,7 +48,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <h2
           lang="en"
-          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl font-medium leading-[1em] tracking-[-0.01em] sm:mt-0"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl font-semibold leading-[1em] tracking-[-0.01em] sm:mt-0"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
