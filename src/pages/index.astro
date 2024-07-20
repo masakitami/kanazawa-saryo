@@ -24,21 +24,21 @@ const { items: articles } = await newtClient.getContents<Article>({
       <div
         class="h-fit sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure class="h-fit w-full">
+        <figure class="size-full">
           <img
             src="/images/mainvisual_1.png"
-            class="h-[70svh] w-full sm:aspect-[454/724] sm:h-auto"
+            class="h-[70svh] w-full sm:aspect-[454/724] lg:h-auto"
             alt=""
           />
         </figure>
       </div>
 
       <header
-        class="relative z-10 h-[30svh] whitespace-nowrap pl-[1.5rem] sm:row-auto sm:h-fit sm:translate-y-0 sm:content-normal sm:pb-[4svb] sm:pl-0 sm:pt-[7svb] sm:text-ks-white sm:mix-blend-difference md:pr-[max(12vw,3rem)] lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:grid lg:h-auto lg:content-center lg:justify-end lg:py-0"
+        class="relative z-10 h-[30svh] whitespace-nowrap pl-[1.5rem] sm:row-auto sm:h-fit sm:translate-y-0 sm:content-normal sm:pb-[6vw] sm:pl-0 sm:text-ks-white sm:mix-blend-difference sm:max-lg:pt-[16vw] md:pr-[max(12vw,3rem)] lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:grid lg:h-auto lg:content-center lg:justify-end lg:py-0"
       >
         <h2
           lang="en"
-          class="mb-[0.25em] mt-[-.65em] w-fit text-enText7xl/[1em] font-[500] tracking-[-0.01em] sm:mt-0"
+          class="mb-[0.25em] mt-[-.65em] w-fit text-[max(6vw,4rem)]/[1em] font-[500] tracking-[-0.01em] sm:mt-0 sm:max-lg:text-[10vw]"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
@@ -130,7 +130,7 @@ const { items: articles } = await newtClient.getContents<Article>({
               class="[&>span]:block [&>span]:text-left lg:[&>span]:text-center"
             >
               <span
-                class="mb-[.35em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)]"
+                class="mb-[.35em] ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0"
                 lang="en">Supervisor</span
               >
               <span
@@ -157,12 +157,14 @@ const { items: articles } = await newtClient.getContents<Article>({
                 />
               </figure>
               <div>
-                <h4 class="mb-[.2em] [&>span]:inline-block lg:[&>span]:block">
+                <h4
+                  class="mb-[.2em] lg:mb-[1.5em] [&>span]:inline-block lg:[&>span]:block"
+                >
                   <span
-                    class="text-[max(1.5vw,theme(fontSize.jpTextXs))]/[1.5vw] font-semibold"
+                    class="text-[max(1.5vw,theme(fontSize.jpTextBase))]/[max(1.5vw,1.23rem)] font-semibold lg:mb-[.25em]"
                     >吉岡&nbsp;正義</span
                   >
-                  <span class="text-jpTextXs"
+                  <span class="text-jpTextXs/[max(1.5vw,1.23rem)]"
                     ><span class="inline-block md:hidden">(</span
                     >よしおか&nbsp;まさよし<span class="inline-block md:hidden"
                       >)</span
@@ -172,8 +174,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                 <p
                   class="text-[max(1vw,theme(fontSize.jpTextXs))]/[max(1.75vw,1.4rem)]"
                 >
-                  金沢美術工芸大学院生。2019年9月にパリのgalerie
-                  satelliteでも個展が開かれるなど、在学中からその才能を発揮。
+                  数多くの国外で活動するグローバル視点の陶芸作家。日本だけでなく世界各地の土でまだ見ぬ焼き物へと挑戦している。
                 </p>
               </div>
             </li>
@@ -191,9 +192,11 @@ const { items: articles } = await newtClient.getContents<Article>({
                 />
               </figure>
               <div>
-                <h4 class="mb-[.2em] [&>span]:inline-block lg:[&>span]:block">
+                <h4
+                  class="mb-[.2em] lg:mb-[1.5em] [&>span]:inline-block lg:[&>span]:block"
+                >
                   <span
-                    class="text-[max(1.5vw,theme(fontSize.jpTextXs))]/[1.5vw] font-semibold"
+                    class="text-[max(1.5vw,theme(fontSize.jpTextBase))]/[max(1.5vw,1.23rem)] font-semibold lg:mb-[.25em]"
                     >松浦&nbsp;悠子</span
                   >
                   <span class="text-jpTextXs"
