@@ -25,12 +25,8 @@ const { items: articles } = await newtClient.getContents<Article>({
         role="img"
         class="sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure>
-          <img
-            class="aspect-[400/580] w-full"
-            src="/images/mainvisual_1.png"
-            alt=""
-          />
+        <figure class="aspect-[400/580] w-full sm:aspect-[400/580]">
+          <img src="/images/mainvisual_1.png" alt="" />
         </figure>
       </div>
 
@@ -48,7 +44,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         <p
           role="heading"
           aria-level="2"
-          class="pl-[max(.85vw,.65em)] text-[max(1.125vw,theme(fontSize.jpTextBase))] leading-[max(215%,1.78rem)]"
+          class="pl-[max(.85vw,.65em)] text-[max(1.125vw,theme(fontSize.jpTextBase))] leading-[2.15]"
         >
           五感を解き放つ、“塗って、味わい、感じる”<br
             translate="no"
