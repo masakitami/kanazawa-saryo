@@ -85,6 +85,9 @@ module.exports = {
         ':lang(en)': {
           'font-family': "'Cormorant Garamond', 'serif'",
         },
+        img: {
+          'object-fit': 'cover',
+        },
         '.c-section': {
           '@apply sm:grid sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-[max(2.6vw,1rem)]':
             {},
