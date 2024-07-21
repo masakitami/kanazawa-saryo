@@ -114,6 +114,9 @@ module.exports = {
         '.u-sticky-for-grid': {
           'align-self': 'start',
         },
+        '.u-no-scrollbar::-webkit-scrollbar': {
+          display: 'none',
+        },
       });
       matchUtilities({
         intrincSize: (value) => {
