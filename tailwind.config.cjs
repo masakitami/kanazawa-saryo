@@ -98,7 +98,7 @@ module.exports = {
           '@apply grid grid-cols-12 gap-x-[max(2.75vw,1rem)]': {},
         },
         '.title-main': {
-          '@apply mb-[.35em] lg:ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0 block':
+          '@apply mb-[.35em] lg:ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0 block font-medium':
             {},
         },
         '.title-sub': {
