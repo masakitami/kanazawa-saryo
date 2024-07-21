@@ -100,7 +100,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       </figure>
       <div class="col-span-5 col-start-8">
         <h2
-          class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)] font-[500]"
+          class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)] font-[500] lg:font-[400]"
         >
           感性と創造力を<br translate="no" ari-hidden="true" />刺激する
         </h2>
@@ -239,7 +239,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         </header>
         <div class="max-sm:mx-[calc(50%-50vw)] max-sm:w-[100vw]">
           <ol
-            class="flex overflow-x-auto u-no-scrollbar max-lg:mx-[26vw] max-sm:flex-nowrap lg:justify-between max-sm:[&>li]:min-w-[50vw]"
+            class="flex overflow-x-auto u-no-scrollbar max-sm:mx-[26vw] max-sm:flex-nowrap lg:justify-between max-sm:[&>li]:min-w-[50vw]"
           >
             <li>
               <header class="mb-[2em] text-center">
@@ -478,11 +478,11 @@ const { items: articles } = await newtClient.getContents<Article>({
           src="/images/tea-experience.png"
           alt="お茶を淹れている様子"
           decoding="async"
-          class="size-full"
+          class="size-full max-lg:object-[75%,0%]"
         />
       </figure>
       <header
-        class="max-lg:col-span-9 max-lg:col-start-3 lg:col-span-3 lg:col-start-8 lg:row-start-2 lg:self-end"
+        class="max-lg:col-span-9 max-lg:col-start-3 md:col-span-3 md:col-start-8 md:row-start-2 md:self-end"
       >
         <div class="flex flex-row-reverse [&>*]:[writing-mode:vertical-rl]">
           <h2
@@ -502,7 +502,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         </div>
       </header>
       <div
-        class="max-lg:col-span-8 max-lg:col-start-3 max-lg:row-start-3 lg:col-span-4 lg:col-start-2 lg:row-start-2"
+        class="max-lg:col-span-8 max-lg:col-start-3 md:col-span-4 md:col-start-2 md:row-start-2 lg:row-start-2"
       >
         <figure class="max-lg:mt-[2em] lg:translate-y-[-20%]">
           <picture>
@@ -523,7 +523,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   <!-- スペーサー -->
   <!-- アクセス -->
   <section id="access">
-    <div>
+    <div class="px-c-gutter-x">
       <h2>
         <span lang="en" class="title-main">Access</span>
         <span lang="en" class="title-sub">アクセス</span>
