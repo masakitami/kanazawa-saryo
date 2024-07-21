@@ -77,7 +77,7 @@ module.exports = {
       addBase({
         body: {
           'font-family': "'Noto Serif JP', 'Cormorant Garamond', 'serif'",
-          'font-weight': '300',
+          'font-weight': '400',
           'background-color': theme('colors.ks-bg'),
           color: theme('colors.ks-black'),
           'overflow-x': 'hidden',
