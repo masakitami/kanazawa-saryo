@@ -30,7 +30,7 @@ module.exports = {
       },
       colors: {
         'ks-bg': '#EAEAEB',
-        'ks-grey': '#FCFDFE',
+        'ks-grey': '#DADADA',
         'ks-black': '#070707',
         'invert(ks-white)': '#030201',
         'invert(ks-black)': '#F8F8F8',
@@ -42,7 +42,7 @@ module.exports = {
       },
       spacing: {
         'c-gutter-x': 'max(4.8vw,1.5rem)',
-        'c-gutter-y': 'max(9vw, 5rem)',
+        'c-gutter-y': 'max(9vw, 4.5rem)',
       },
       keyframes: {
         marquee: {
@@ -92,6 +92,14 @@ module.exports = {
         },
         '.c-section': {
           '@apply sm:grid sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-[max(2.6vw,1rem)]':
+            {},
+        },
+        '.title-main': {
+          '@apply mb-[.35em] lg:ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0 block':
+            {},
+        },
+        '.title-sub': {
+          '@apply text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1em] block tracking-[.05em]':
             {},
         },
       });

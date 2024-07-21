@@ -47,7 +47,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         <p
           role="heading"
           aria-level="2"
-          class="pl-[max(.85vw,.5em)] text-[max(1.125vw,0.88rem)]/[max(2.5vw,2rem)]"
+          class="pl-[max(.85vw,.5em)] text-[max(1.125vw,0.84rem)]/[max(2.5vw,1.8rem)] font-[350]"
         >
           五感を解き放つ、“塗って、味わい、感じる”<br
             translate="no"
@@ -60,7 +60,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <ol
           role="list"
-          class="invisible h-0 text-jpTextBase lg:visible lg:h-auto [&>li]:whitespace-nowrap [&>li]:font-[200] [&>li]:leading-[300%]"
+          class="invisible h-0 text-[max(1vw,theme(fontSize.jpTextBase))] lg:visible lg:h-auto [&>li]:whitespace-nowrap [&>li]:font-[200] [&>li]:leading-[300%]"
         >
           <li><a href="">01.コンセプト</a></li>
           <li><a href="">02.体験内容と料金</a></li>
@@ -100,7 +100,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       </figure>
       <div class="relative z-10 col-span-5 col-start-8">
         <h2
-          class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)]"
+          class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)] font-[300]"
         >
           感性と創造力を<br translate="no" ari-hidden="true" />刺激する
         </h2>
@@ -108,7 +108,7 @@ const { items: articles } = await newtClient.getContents<Article>({
           class="text-[max(1.14vw,theme(Fontsize.jpTextSm))]/[max(2.6vw,1.75rem)]"
         > -->
         <div
-          class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(2.6vw,1.75rem)] max-sm:pl-[29vw] lg:pr-[7.25rem] [&>p]:mb-[max(3vw,1.5rem)] [&>p]:text-justify"
+          class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(2.6vw,1.75rem)] max-sm:pl-[24vw] xl:pr-[7.25rem] [&>p]:mb-[max(3vw,1.5rem)] [&>p]:text-justify"
         >
           <p>
             金沢茶寮は、自分の手で色彩をほどこした器でプレミアム日本茶を嗜むことが出来る体感型アートカフェです。
@@ -126,17 +126,9 @@ const { items: articles } = await newtClient.getContents<Article>({
 
         <aside class="pr-0 pt-[max(1.5vw,3rem)] lg:pr-[5.1vw]">
           <header class="mb-[max(3vw,2.5rem)]">
-            <h3
-              class="[&>span]:block [&>span]:text-left lg:[&>span]:text-center"
-            >
-              <span
-                class="mb-[.35em] ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0"
-                lang="en">Supervisor</span
-              >
-              <span
-                class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1em]"
-                >監修者紹介</span
-              >
+            <h3 class="text-left sm:text-center">
+              <span class="title-main" lang="en">Supervisor</span>
+              <span class="title-sub">監修者紹介</span>
             </h3>
           </header>
 
@@ -164,7 +156,8 @@ const { items: articles } = await newtClient.getContents<Article>({
                     class="text-[max(1.5vw,theme(fontSize.jpTextBase))]/[max(1.5vw,1.23rem)] font-semibold lg:mb-[.25em]"
                     >吉岡&nbsp;正義</span
                   >
-                  <span class="text-jpTextXs/[max(1.5vw,1.23rem)]"
+                  <span
+                    class="text-[max(0.8vw,theme(fontSize.jpTextXs))]/[max(1.5vw,1.23rem)]"
                     ><span class="inline-block md:hidden">(</span
                     >よしおか&nbsp;まさよし<span class="inline-block md:hidden"
                       >)</span
@@ -199,7 +192,8 @@ const { items: articles } = await newtClient.getContents<Article>({
                     class="text-[max(1.5vw,theme(fontSize.jpTextBase))]/[max(1.5vw,1.23rem)] font-semibold lg:mb-[.25em]"
                     >松浦&nbsp;悠子</span
                   >
-                  <span class="text-jpTextXs"
+                  <span
+                    class="text-[max(0.8vw,theme(fontSize.jpTextXs))]/[max(1.5vw,1.23rem)]"
                     ><span class="inline-block md:hidden">(</span
                     >まつうら&nbsp;ゆうこ<span class="inline-block md:hidden"
                       >)</span
@@ -220,6 +214,230 @@ const { items: articles } = await newtClient.getContents<Article>({
     </article>
     <!-- コンセプトー -->
   </section>
+  <!-- スペーサー -->
+  <div aria-hidden="true" class="pb-c-gutter-y"></div>
+  <!-- スペーサー -->
+  <!-- 体験ー -->
+  <section id="program">
+    <figure class="aspect-[400/264] sm:max-lg:aspect-auto lg:aspect-[1600/696]">
+      <img
+        src="/images/program.png"
+        width="1600"
+        height="696"
+        decoding="async"
+        class="size-full sm:max-lg:min-h-[8rem]"
+        alt="金沢茶寮の体験の流れ"
+      />
+    </figure>
+    <div class="px-c-gutter-x">
+      <div class="px-[max(7.6vw,3.37rem)]">
+        <header class="mb-[max(5vw,3.5rem)] max-lg:text-center">
+          <h2 class="mt-[-2em]">
+            <span class="title-main lg:ml-[-.03em]" lang="en">Program</span>
+            <span class="title-sub">体験内容と料金</span>
+          </h2>
+        </header>
+        <div
+          class="overflow-x-auto max-sm:mx-[calc(50%-50vw)] max-sm:w-[100vw]"
+        >
+          <ol
+            class="flex max-sm:flex-nowrap lg:justify-between max-sm:[&>li]:min-w-[50vw]"
+          >
+            <li>
+              <header class="mb-[2em] text-center">
+                <div
+                  class="mr-[.2em] text-center text-[max(2.66vw,2rem)] tracking-[.1em]"
+                >
+                  01
+                </div>
+                <div>
+                  <img
+                    src="/images/elegant-chevron.svg"
+                    width="268"
+                    height="27"
+                    decoding="async"
+                    class="mx-auto w-[85%]"
+                    alt=""
+                  />
+                </div>
+              </header>
+              <figure class="mb-[2em]">
+                <img
+                  src="/images/apply.png"
+                  alt="どんな色彩の器にするかイメージする"
+                />
+              </figure>
+              <footer>
+                <p
+                  class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(1.9vw,1.6rem)]"
+                >
+                  どんな色彩の器にするか <br
+                    translate="no"
+                    aria-hidden="true"
+                  />イメージする
+                </p>
+              </footer>
+            </li>
+            <li>
+              <header class="mb-[2em] text-center">
+                <div
+                  class="mr-[.2em] text-center text-[max(2.66vw,2rem)] tracking-[.1em]"
+                >
+                  02
+                </div>
+                <div>
+                  <img
+                    src="/images/elegant-chevron.svg"
+                    width="268"
+                    height="27"
+                    class="mx-auto w-[85%]"
+                    alt=""
+                  />
+                </div>
+              </header>
+              <figure class="mb-[2em]">
+                <img
+                  src="/images/make-color.png"
+                  alt="塗り重ねをして、色を作る"
+                />
+              </figure>
+              <footer>
+                <p
+                  class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(1.9vw,1.6rem)]"
+                >
+                  塗り重ねをして<br translate="no" aria-hidden="true" />色を作る
+                </p>
+              </footer>
+            </li>
+            <li>
+              <header class="mb-[2em] text-center">
+                <div
+                  class="mr-[.2em] text-center text-[max(2.66vw,2rem)] tracking-[.1em]"
+                >
+                  03
+                </div>
+                <div>
+                  <img
+                    src="/images/elegant-chevron.svg"
+                    width="268"
+                    height="27"
+                    decoding="async"
+                    class="mx-auto w-[85%]"
+                    alt=""
+                  />
+                </div>
+              </header>
+              <figure class="mb-[2em]">
+                <img
+                  src="/images/curve.png"
+                  alt="色を塗り、乾かし、さらに削る"
+                />
+              </figure>
+              <footer>
+                <p
+                  class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(1.9vw,1.6rem)]"
+                >
+                  色を塗り、乾かし、<br
+                    translate="no"
+                    aria-hidden="true"
+                  />さらに削る
+                </p>
+              </footer>
+            </li>
+            <li>
+              <header class="mb-[2em] text-center">
+                <div
+                  class="mr-[.2em] text-center text-[max(2.66vw,2rem)] tracking-[.1em]"
+                >
+                  04
+                </div>
+                <div>
+                  <img
+                    src="/images/elegant-chevron.svg"
+                    width="268"
+                    height="27"
+                    decoding="async"
+                    class="mx-auto w-[85%]"
+                    alt=""
+                  />
+                </div>
+              </header>
+              <figure class="mb-[2em]">
+                <img
+                  src="/images/drink.png"
+                  alt="世界で一つだけの器で、プレミアム日本茶を飲む"
+                />
+              </figure>
+              <footer>
+                <p
+                  class="text-center text-[max(1.14vw,theme(fontSize.jpTextSm))]/[max(1.9vw,1.6rem)]"
+                >
+                  世界で一つだけの器で、<br
+                    translate="no"
+                    aria-hidden="true"
+                  />プレミアム日本茶を飲む
+                </p>
+              </footer>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- スペーサー -->
+      <div class="pb-[max(6vw,6.75rem)]" aria-hidden="true"></div>
+      <!-- スペーサー -->
+
+      <!-- 体験内容CV -->
+      <article>
+        <h3 class="sr-only">料金とその他詳細</h3>
+        <div
+          class="grid grid-cols-10 grid-rows-3 gap-x-[max(2.5vw,1rem)]
+          px-[max(7.6vw,3.37rem)]"
+        >
+          <p
+            lang="en"
+            class="text-left text-[max(8vw,4rem)]/[max(8vw,4.48rem)] lg:col-span-5 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:text-ks-grey"
+          >
+            Price&nbsp;And<br translate="no" aria-hidden="true" />Detail
+          </p>
+          <figure
+            class="aspect-[1/1] lg:col-span-5 lg:col-start-6 lg:row-span-2 lg:row-start-1"
+          >
+            <img
+              class="size-full"
+              width="578"
+              height="569"
+              decoding="async"
+              src="/images/cv.png"
+              alt="茶器に色を塗っている画像"
+            />
+          </figure>
+          <ul
+            class="self-end lg:col-span-5 lg:col-start-1 lg:row-span-1 lg:row-start-2"
+          >
+            <li class="mb-[max(1.5vw,1rem)]">
+              <img
+                src="/images/price.svg"
+                alt="1名様6900円(税込)。器、塗料、お茶の代金が含まれます"
+              />
+            </li>
+            <li>
+              <img
+                src="/images/three-parts.svg"
+                alt="10時、13時、16時の3部制です。各回6名限定で2時間制。当日予約はお電話にて承ります。"
+              />
+            </li>
+          </ul>
+          <button class="col-span-10" type="button">
+            <a href="">体験予約</a>
+          </button>
+        </div>
+      </article>
+      <!-- /体験内容cv -->
+    </div>
+  </section>
+
+  <!-- 体験ー -->
 
   <!-- <ul>
       {
