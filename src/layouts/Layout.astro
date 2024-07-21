@@ -146,11 +146,14 @@ const { title, description, keyword } = Astro.props;
   </style>
   <body>
     <!-- ヘッダー -->
-    <header class="sticky top-0 z-10 max-md:h-0">
+    <header class="sticky top-0 z-20 max-md:h-0">
       <div
         class="grid grid-cols-[1fr,auto] items-center px-[max(5vw,1.5rem)] pt-[max(2vw,1rem)]"
       >
-        <h1 class="w-[max(11.5vw,8.75rem)]" class="">
+        <h1
+          class="w-[max(11.5vw,8.75rem)]"
+          class="contents mix-blend-difference"
+        >
           <a href="/" class="w-[max(11.5vw,8.7rem)]">
             <img
               src="/images/logo.svg"
@@ -164,10 +167,14 @@ const { title, description, keyword } = Astro.props;
           </a>
         </h1>
 
-        <div class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black">
+        <button
+          type="button"
+          class="grid grid-cols-[auto,1fr] place-items-center bg-ks-black"
+        >
           <a
-            class="mr-[max(2vw,.8rem)] box-border pb-[max(1vw,0.7rem)] pl-[max(4.4vw,2.2rem)] pt-[max(.9vw,0.6rem)] text-[max(1vw,theme(fontSize.jpTextBase))] text-ks-white"
-            href="/"
+            class="mr-[max(2vw,.8rem)] box-border pb-[max(1vw,0.7rem)] pl-[max(4vw,2.2rem)] pt-[max(.9vw,0.6rem)] text-[max(1vw,theme(fontSize.jpTextBase))] text-ks-white"
+            href="https://www.kanazawasaryo.jp/"
+            target="_blank"
             role="button">体験予約</a
           >
           <span class="mr-[max(1.15vw,.75rem)] block w-[max(1.1vw,1rem)]"
@@ -180,7 +187,7 @@ const { title, description, keyword } = Astro.props;
               alt=""
             /></span
           >
-        </div>
+        </button>
       </div>
     </header>
     <!-- ヘッダー -->

@@ -42,7 +42,7 @@ module.exports = {
       },
       spacing: {
         'c-gutter-x': 'max(4.8vw,1.5rem)',
-        'c-gutter-y': 'max(9vw, 4.5rem)',
+        'c-gutter-y': 'max(9vw, 5.5rem)',
       },
       keyframes: {
         marquee: {
@@ -93,6 +93,9 @@ module.exports = {
         '.c-section': {
           '@apply sm:grid sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-[max(2.6vw,1rem)]':
             {},
+        },
+        '.c-grid': {
+          '@apply grid grid-cols-12 gap-x-[max(2.75vw,1rem)]': {},
         },
         '.title-main': {
           '@apply mb-[.35em] lg:ml-[-.1em] text-[max(4vw,theme(fontSize.enText4xl))]/[max(4.48vw,3.2rem)] lg:ml-0 block':
