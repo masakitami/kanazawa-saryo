@@ -4,7 +4,7 @@
 
 ## 🖋 概要
 金沢茶寮さまWEBリブランディングの開発環境です。フロントエンドツールには「vite」を利用しているため、高速に静的サイトを開発することが可能です。
-また、フレームワークはAstroを採用し、ホスティングサービスはVercelを使用しています。
+また、フレームワークは[Astro](https://astro.build/)を採用し、ホスティングサービスはVercel[Vercel](https://vercel.com/)を使用しています。
 
 - [既存サイトURL](https://www.kanazawasaryo.jp/)
 - [新サイトのデザインデータ(figma)](https://x.gd/bUZGC)
