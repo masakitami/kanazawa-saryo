@@ -22,6 +22,9 @@ const { article } = Astro.props;
 
 <Layout title="Article" description="test" keyword="test" />
 <div class="px-[4vw] pt-[max(20vw,10rem)]">
+  <p>
+    <img src={article.coverImage.src} alt="" />
+  </p>
   <h1>{article.title}</h1>
   <article set:html={article.body} />
 </div>
