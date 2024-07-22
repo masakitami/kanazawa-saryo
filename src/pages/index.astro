@@ -1,7 +1,6 @@
 ---
 // import { getBlogs } from '../libs/microcms';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import { newtClient } from '../libs/newt';
 import type { Article } from '../libs/newt';
 const { items: articles } = await newtClient.getContents<Article>({
