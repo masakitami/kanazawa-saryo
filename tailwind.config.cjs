@@ -75,6 +75,10 @@ module.exports = {
       );
       // デフォルトCSS
       addBase({
+        html: {
+          'scroll-behavior': ' smooth',
+          'scroll-padding-top': '100px',
+        },
         body: {
           'font-family': "'Noto Serif JP', 'Cormorant Garamond', 'serif'",
           'font-weight': '400',

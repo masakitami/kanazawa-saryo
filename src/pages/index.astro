@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import { newtClient } from '../libs/newt';
 import type { Article } from '../libs/newt';
+import Slider from '../components/Slider.astro';
 const { items: articles } = await newtClient.getContents<Article>({
   appUid: 'blog',
   modelUid: 'article',
@@ -23,13 +24,9 @@ const { items: articles } = await newtClient.getContents<Article>({
       <div
         class="h-fit sm:col-span-full sm:row-span-1 sm:row-start-2 lg:col-span-4 lg:col-start-5 lg:row-span-2 lg:row-start-1"
       >
-        <figure class="size-full">
-          <img
-            src="/images/mainvisual_1.png"
-            class="h-[70svh] w-full sm:aspect-[454/724] lg:h-auto"
-            alt=""
-          />
-        </figure>
+        <div class="h-[70svh] overflow-hidden lg:h-auto">
+          <Slider />
+        </div>
       </div>
 
       <header
@@ -37,7 +34,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       >
         <h2
           lang="en"
-          class="mb-[0.25em] mt-[-.65em] w-fit text-[max(6vw,3.5rem)]/[1em] font-[500] tracking-[-0.01em] sm:mt-0 sm:max-lg:text-[10vw]"
+          class="mb-[0.25em] mt-[-.6em] w-fit text-[max(6vw,3.5rem)]/[1em] font-[500] tracking-[-0.01em] sm:mt-0 sm:max-lg:text-[10vw]"
         >
           Unleash&nbsp;Your<br translate="no" aria-hidden="true" /><span
             class="mr-[.09em]"
@@ -61,11 +58,11 @@ const { items: articles } = await newtClient.getContents<Article>({
           role="list"
           class="invisible h-0 text-[max(1vw,theme(fontSize.jpTextBase))] lg:visible lg:h-auto [&>li]:whitespace-nowrap [&>li]:font-[200] [&>li]:leading-[300%]"
         >
-          <li><a href="">01.コンセプト</a></li>
-          <li><a href="">02.体験内容と料金</a></li>
-          <li><a href="">03.アクセス</a></li>
-          <li><a href="">04.お知らせ</a></li>
-          <li><a href="">05.公式インスタグラム</a></li>
+          <li><a href="#concept-title">01.コンセプト</a></li>
+          <li><a href="#program-title">02.体験内容と料金</a></li>
+          <li><a href="#access-title">03.アクセス</a></li>
+          <li><a href="#news-title">04.お知らせ</a></li>
+          <li><a href="#instagram-title">05.公式インスタグラム</a></li>
         </ol>
       </nav>
     </div>
@@ -93,12 +90,14 @@ const { items: articles } = await newtClient.getContents<Article>({
           decoding="async"
           width="493"
           height="272"
+          loading="lazy"
           alt="金沢茶寮の体験の簡略図"
           class="w-full"
         />
       </figure>
       <div class="col-span-5 col-start-8">
         <h2
+          id="concept-title"
           class="mb-[max(2.5vw,3.5rem)] mt-[-1.75em] text-[max(4vw,theme(fontSize.jpText3xl))]/[max(7vw,3.5rem)] font-[500] lg:font-[400]"
         >
           感性と創造力を<br translate="no" ari-hidden="true" />刺激する
@@ -144,6 +143,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                   width="165"
                   height="165"
                   src="/images/yoshiokasan.png"
+                  loading="lazy"
                   alt="金沢茶寮で働く吉岡さん"
                 />
               </figure>
@@ -179,6 +179,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                   decoding="async"
                   width="165"
                   height="165"
+                  loading="lazy"
                   src="/images/matsuurasan.png"
                   alt="金沢茶寮で働く松浦さん"
                 />
@@ -224,6 +225,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         width="1600"
         height="696"
         decoding="async"
+        loading="lazy"
         class="size-full sm:max-lg:min-h-[8rem]"
         alt="金沢茶寮の体験の流れ"
       />
@@ -231,7 +233,7 @@ const { items: articles } = await newtClient.getContents<Article>({
     <div class="px-c-gutter-x sm:max-lg:px-0">
       <div class="px-[max(7.6vw,3.37rem)]">
         <header class="mb-[max(5vw,3.5rem)] max-lg:text-center">
-          <h2 class="mt-[-2em]">
+          <h2 class="mt-[-2em]" id="program-title">
             <span class="title-main lg:ml-[-.03em]" lang="en">Program</span>
             <span class="title-sub">体験内容と料金</span>
           </h2>
@@ -253,6 +255,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                     width="268"
                     height="27"
                     decoding="async"
+                    loading="lazy"
                     class="mx-auto w-[80%]"
                     alt=""
                   />
@@ -262,6 +265,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                 <img
                   src="/images/apply.png"
                   alt="どんな色彩の器にするかイメージする"
+                  loading="lazy"
                 />
               </figure>
               <footer>
@@ -288,6 +292,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                     width="268"
                     height="27"
                     class="mx-auto w-[80%]"
+                    loading="lazy"
                     alt=""
                   />
                 </div>
@@ -296,6 +301,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                 <img
                   src="/images/make-color.png"
                   alt="塗り重ねをして、色を作る"
+                  loading="lazy"
                 />
               </figure>
               <footer>
@@ -320,6 +326,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                     height="27"
                     decoding="async"
                     class="mx-auto w-[80%]"
+                    loading="lazy"
                     alt=""
                   />
                 </div>
@@ -328,6 +335,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                 <img
                   src="/images/curve.png"
                   alt="色を塗り、乾かし、さらに削る"
+                  loading="lazy"
                 />
               </figure>
               <footer>
@@ -355,13 +363,16 @@ const { items: articles } = await newtClient.getContents<Article>({
                     height="27"
                     decoding="async"
                     class="mx-auto w-[80%]"
+                    loading="lazy"
                     alt=""
                   />
                 </div>
               </header>
               <figure class="mb-[2em]">
                 <img
+                  decoding="async"
                   src="/images/drink.png"
+                  loading="lazy"
                   alt="世界で一つだけの器で、プレミアム日本茶を飲む"
                 />
               </figure>
@@ -405,6 +416,7 @@ const { items: articles } = await newtClient.getContents<Article>({
               width="578"
               height="569"
               decoding="async"
+              loading="lazy"
               src="/images/cv.png"
               alt="茶器に色を塗っている画像"
             />
@@ -416,6 +428,7 @@ const { items: articles } = await newtClient.getContents<Article>({
               <img
                 src="/images/price.svg"
                 class="size-full"
+                loading="lazy"
                 width="432"
                 height="98"
                 decoding="async"
@@ -428,6 +441,7 @@ const { items: articles } = await newtClient.getContents<Article>({
                 width="432"
                 height="98"
                 decoding="async"
+                loading="lazy"
                 src="/images/three-parts.svg"
                 alt="10時、13時、16時の3部制です。各回6名限定で2時間制。当日予約はお電話にて承ります。"
               />
@@ -438,24 +452,25 @@ const { items: articles } = await newtClient.getContents<Article>({
           >
             <button
               type="button"
-              class="relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black lg:border-[1px] lg:border-ks-black lg:bg-transparent"
+              class="group relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black duration-150 ease-in hover:bg-ks-black lg:border-[1px] lg:border-ks-black lg:bg-transparent"
             >
               <a
                 target="_blank"
                 href="https://www.kanazawasaryo.jp/"
                 class="absolute left-0 top-0 block size-full"></a>
               <span
-                class="block size-full py-[max(3.75vw,1.25rem)] pl-[1em] text-center text-[max(4vw,1rem)]/[1em] font-[300] text-ks-white lg:text-ks-black"
+                class="block size-full py-[max(3.75vw,1.25rem)] pl-[1em] text-center text-[max(4vw,1rem)]/[1em] font-[300] text-ks-white group-hover:text-ks-white lg:text-ks-black"
                 >体験予約</span
               >
               <span class="block w-[max(4vw,1.25rem)] translate-x-[-100%]">
                 <img
                   width="19"
                   height="15"
+                  loading="lazy"
                   decoding="async"
                   src="/images/chevron-white.svg"
                   alt=""
-                  class="size-full lg:invert"
+                  class="size-full delay-100 duration-500 ease-in-out group-hover:translate-x-[50%] group-hover:invert-0 lg:invert"
                 />
               </span>
             </button>
@@ -483,6 +498,7 @@ const { items: articles } = await newtClient.getContents<Article>({
           width="1397"
           height="456"
           src="/images/tea-experience.png"
+          loading="lazy"
           alt="お茶を淹れている様子"
           decoding="async"
           class="size-full max-lg:object-[78%,0%]"
@@ -518,7 +534,13 @@ const { items: articles } = await newtClient.getContents<Article>({
               media="(max-width: 1023px)"
             />
             <source srcset="/images/tea-menu.svg" media="(min-width: 1024px)" />
-            <img src="tea-menu.svg" class="size-full" alt="カフェメニュー" />
+            <img
+              src="tea-menu.svg"
+              class="size-full"
+              alt="カフェメニュー"
+              decoding="async"
+              loading="lazy"
+            />
           </picture>
         </figure>
       </div>
@@ -532,7 +554,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   <section id="access">
     <div class="px-c-gutter-x">
       <div class="lg:px-[max(7.6vw,3.37rem)]">
-        <h2 class="max-lg:mb-[1.5em]">
+        <h2 class="max-lg:mb-[1.5em]" id="access-title">
           <span lang="en" class="title-main">Access</span>
           <span class="title-sub">アクセス</span>
         </h2>
@@ -574,14 +596,14 @@ const { items: articles } = await newtClient.getContents<Article>({
         <div class="flex max-sm:flex-col max-sm:gap-y-[1rem] sm:gap-x-[2.5vw]">
           <button
             type="button"
-            class="relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black"
+            class="group relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black duration-150 ease-linear hover:bg-ks-white"
           >
             <a
               target="_blank"
               href="https://www.kanazawasaryo.jp/"
               class="absolute left-0 top-0 block size-full"></a>
             <p
-              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
+              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white group-hover:text-ks-black lg:text-ks-white"
             >
               車・タクシーでの来店方法
             </p>
@@ -590,24 +612,25 @@ const { items: articles } = await newtClient.getContents<Article>({
             >
               <img
                 width="19"
+                loading="lazy"
                 height="15"
                 decoding="async"
                 src="/images/chevron-white.svg"
                 alt=""
-                class="size-full"
+                class="size-full delay-100 duration-200 ease-in-out group-hover:translate-x-[50%] group-hover:invert"
               />
             </span>
           </button>
           <button
             type="button"
-            class="relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black"
+            class="group relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black duration-150 ease-linear hover:bg-ks-white"
           >
             <a
               target="_blank"
               href="https://www.kanazawasaryo.jp/"
               class="absolute left-0 top-0 block size-full"></a>
             <p
-              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
+              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white group-hover:text-ks-black lg:text-ks-white"
             >
               徒歩での来店方法
             </p>
@@ -617,10 +640,11 @@ const { items: articles } = await newtClient.getContents<Article>({
               <img
                 width="19"
                 height="15"
+                loading="lazy"
                 decoding="async"
                 src="/images/chevron-white.svg"
                 alt=""
-                class="size-full"
+                class="size-full delay-100 duration-200 ease-in-out group-hover:translate-x-[50%] group-hover:invert"
               />
             </span>
           </button>
@@ -638,7 +662,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   <section id="news">
     <div class="px-c-gutter-x">
       <div class="lg:px-[max(7.6vw,3.37rem)]">
-        <h2 class="mb-[max(6.5vw,3rem)] text-center">
+        <h2 class="mb-[max(6.5vw,3rem)] text-center" id="news-title">
           <span lang="en" class="title-main">News</span>
           <span class="title-sub">お知らせ</span>
         </h2>
@@ -650,24 +674,25 @@ const { items: articles } = await newtClient.getContents<Article>({
               articles.map((article) => {
                 console.log('article', article);
                 return (
-                  <li class="relative grid grid-cols-[auto,1fr] gap-x-[max(2.1vw,1rem)]">
-                    <a
-                      href={`articles/${article.slug}`}
-                      class=" absolute left-0 top-0 block size-full"
-                    />
-                    <figure class="aspect-[1/1] w-[max(10.3vw,7.62rem)]">
+                  <li class="group relative grid grid-cols-[auto,1fr] gap-x-[max(2.1vw,1rem)]">
+                    <figure class="aspect-[1/1] w-[max(10.3vw,7.62rem)] overflow-hidden">
                       <img
                         src={article.coverImage.src}
                         width="165"
                         height="165"
+                        loading="lazy"
                         decoding="async"
                         alt=""
-                        class="size-full"
+                        class="size-full duration-500 ease-in-out group-hover:scale-125"
                       />
                     </figure>
-                    <p class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1.75em]">
+                    <p class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1.75em] group-hover:opacity-40">
                       {article.title}
                     </p>
+                    <a
+                      href={`articles/${article.slug}`}
+                      class="absolute left-0 top-0 block size-full"
+                    />
                   </li>
                 );
               })
@@ -684,8 +709,13 @@ const { items: articles } = await newtClient.getContents<Article>({
   <!-- スペーサー -->
 
   <footer>
-    <aside class="relative grid h-fit items-center">
-      <a href="" class="absolute left-0 top-0 block size-full"></a>
+    <aside
+      class="group relative grid h-fit items-center overflow-hidden px-c-gutter-x"
+    >
+      <a
+        href="https://www.kanazawasaryo.jp/"
+        class="absolute left-0 top-0 block size-full hover:scale-110"
+        target="_blank"></a>
       <div
         class="absolute left-0 top-0 z-[-1] aspect-[400/160] size-full lg:aspect-[1600/480]"
       >
@@ -694,33 +724,39 @@ const { items: articles } = await newtClient.getContents<Article>({
           width="1600"
           height="480"
           decoding="async"
-          class="size-full"
+          class="size-full duration-500 ease-in-out group-hover:scale-110"
+          loading="lazy"
           alt="体験申し込みはこちら"
         />
       </div>
-      <div class="px-c-gutter-x">
-        <div
-          class="grid grid-cols-[1fr,auto] items-center lg:px-[max(7.6vw,3.37rem)]"
-        >
-          <h2
-            class="size-full py-[max(9vw,2.5rem)] text-ks-white [&>span]:block"
+      <div
+        class="group grid size-full grid-cols-[1fr,auto] items-center lg:px-[max(7.6vw,3.37rem)]"
+      >
+        <h2 class="size-full py-[max(9vw,2.5rem)] text-ks-white [&>span]:block">
+          <span
+            lang="en"
+            class="grou-hover:text-stone-800 mb-[.2em] text-[max(6vw,2.5rem)]/[1em] font-medium"
+            >Reservation</span
           >
-            <span lang="en" class="mb-[.1em] text-[max(6vw,2.5rem)]/[1em]"
-              >Reservation</span
-            >
-            <span
-              role="heading"
-              class="text-[max(2.5vw,theme(fontSize.jpTextXs))]"
-              >体験予約をする</span
-            >
-          </h2>
-          <div class="w-[max(8.8vw,3rem)]">
-            <img
-              class="size-full"
-              src="/images/chevron-border-white.svg"
-              alt=""
-            />
-          </div>
+          <span
+            role="heading"
+            class="text-[max(2.5vw,theme(fontSize.jpTextXs))]"
+            >体験予約をする</span
+          >
+        </h2>
+        <div
+          class="w-[max(8.8vw,3rem)] delay-100 duration-500 ease-in-out group-hover:translate-x-[50%]"
+        >
+          <img
+            width="142"
+            height="124"
+            class="size-full"
+            decoding="async"
+            loading="lazy"
+            src="/images/chevron-border-white.svg"
+            class="size-full"
+            alt=""
+          />
         </div>
       </div>
     </aside>
@@ -732,15 +768,17 @@ const { items: articles } = await newtClient.getContents<Article>({
           <a href="/">
             <img
               width="322"
+              loading="lazy"
               height="392"
               src="/images/verticle-white-logo.svg"
               decoding="async"
               alt="金沢茶寮"
+              class="size-full"
             />
           </a>
         </figure>
         <article class="order-1 text-center text-ks-white lg:order-2">
-          <h2 class="mb-[max(4vw,2rem)] text-center">
+          <h2 class="mb-[max(4vw,2rem)] text-center" id="instagram-title">
             <span lang="en" class="title-main">Instagram</span>
             <span class="title-sub">公式インスタグラム</span>
           </h2>
@@ -750,19 +788,20 @@ const { items: articles } = await newtClient.getContents<Article>({
               height="569"
               decoding="async"
               src="/images/instagram.png"
+              loading="lazy"
               alt="公式インスタグラム"
             />
           </figure>
           <button
             type="button"
-            class="relative mx-auto grid h-fit grid-cols-[1fr,auto] justify-center border-[1px] border-ks-white bg-transparent max-lg:w-[100%]"
+            class="group relative mx-auto grid h-fit grid-cols-[1fr,auto] justify-center border-[.5px] border-ks-white bg-transparent duration-500 ease-in-out hover:bg-ks-white max-lg:w-[100%]"
           >
             <a
               target="_blank"
               href="https://www.instagram.com/kanazawa_saryo/"
               class="absolute left-0 top-0 block size-full"></a>
             <p
-              class="block px-[max(6.4vw,6.1rem)] py-[max(1vw,1.25rem)] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
+              class="block translate-x-[.25em] px-[max(6.4vw,6.1rem)] py-[max(1vw,1.25rem)] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white group-hover:text-ks-black lg:text-ks-white"
             >
               もっと見る
             </p>
@@ -775,7 +814,8 @@ const { items: articles } = await newtClient.getContents<Article>({
                 decoding="async"
                 src="/images/chevron-white.svg"
                 alt=""
-                class="size-full"
+                loading="lazy"
+                class="size-full delay-100 duration-500 ease-in-out group-hover:translate-x-[50%] group-hover:invert"
               />
             </span>
           </button>
