@@ -76,7 +76,6 @@ module.exports = {
       // デフォルトCSS
       addBase({
         html: {
-          'scroll-behavior': ' smooth',
           'scroll-padding-top': '100px',
         },
         body: {
