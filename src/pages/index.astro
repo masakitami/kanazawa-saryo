@@ -482,11 +482,11 @@ const { items: articles } = await newtClient.getContents<Article>({
         />
       </figure>
       <header
-        class="max-lg:col-span-9 max-lg:col-start-3 md:col-span-3 md:col-start-8 md:row-start-2 md:self-end"
+        class="max-lg:col-span-9 max-lg:col-start-3 md:col-span-3 md:col-start-8 md:row-start-2 md:self-end lg:mt-[3em]"
       >
         <div class="flex flex-row-reverse [&>*]:[writing-mode:vertical-rl]">
           <h2
-            class="ml-[.85em] text-[max(2.66vw,2rem)] font-[400] tracking-[.2em]"
+            class="ml-[.85em] mt-[-0.1em] text-[max(2.66vw,2rem)] font-[400] tracking-[.2em]"
           >
             日本茶を嗜む
           </h2>
@@ -529,39 +529,30 @@ const { items: articles } = await newtClient.getContents<Article>({
           <span lang="en" class="title-main">Access</span>
           <span class="title-sub">アクセス</span>
         </h2>
-        <article class="flex max-sm:flex-col-reverse">
-          <div class="grid lg:basis-[30%]">
+        <article class="mb-[max(4.5vw,1.875rem)] flex max-lg:flex-col-reverse">
+          <div class="grid lg:basis-[35%]">
             <ul
-              class="my-auto block [&>li]:text-[max(1.1vw,0.8rem)] [&>li]:leading-[max(2.25vw,2.5rem)]"
+              class="my-auto block [&>li]:text-[max(1.1vw,0.8rem)] [&>li]:leading-[max(2vw,2rem)]"
             >
               <li
                 class="border-ks-black max-lg:flex max-lg:justify-between max-lg:border-b-[.25px] max-lg:border-dashed"
               >
                 <p class="font-bold">住所</p>
-                <p>
-                  〒920-0832&nbsp;<br
-                    class="max-lg:hidden"
-                    translate="no"
-                  />石川県金沢市卯辰町チ16-17
-                </p>
+                <p>〒920-0832&nbsp;石川県金沢市卯辰町チ16-17</p>
               </li>
               <li
                 class="border-ks-black max-lg:flex max-lg:justify-between max-lg:border-b-[.25px] max-lg:border-dashed"
               >
-                <p class="font-bold">営業時間</p><br translate="no" /><p>
-                  10:00〜18:00[不定休]
-                </p>
+                <p class="font-bold">営業時間</p><p>10:00〜18:00[不定休]</p>
               </li>
               <li
                 class="border-ks-black max-lg:flex max-lg:justify-between max-lg:border-b-[.25px] max-lg:border-dashed"
               >
-                <p class="font-bold">電話番号</p><br translate="no" /><p>
-                  076-254-6647
-                </p>
+                <p class="font-bold">電話番号</p><p>076-254-6647</p>
               </li>
             </ul>
           </div>
-          <div class="max-lg:mb-[2em] lg:basis-[70%]">
+          <div class="max-lg:mb-[2em] lg:basis-[65%]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3204.153040727107!2d136.6705596757367!3d36.5745296803884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8330bdce1e9e5%3A0x6797b621e2a29e02!2z44CSOTIwLTA4MzIg55-z5bed55yM6YeR5rKi5biC5Y2v6L6w55S644OB77yR77yW4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1721590475328!5m2!1sja!2sjp"
               width="600"
@@ -573,14 +564,59 @@ const { items: articles } = await newtClient.getContents<Article>({
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </article>
-        <div>
-          <button></button>
-          <button></button>
+        <div class="flex max-sm:flex-col max-sm:gap-y-[1rem] sm:gap-x-[2.5vw]">
+          <button
+            type="button"
+            class="relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black"
+          >
+            <a
+              target="_blank"
+              href="https://www.kanazawasaryo.jp/"
+              class="absolute left-0 top-0 block size-full"></a>
+            <span
+              class="block size-full py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
+              >車・タクシーでの来店方法</span
+            >
+            <span class="block w-[max(2vw,1rem)] translate-x-[-100%]">
+              <img
+                width="19"
+                height="15"
+                decoding="async"
+                src="/images/chevron-white.svg"
+                alt=""
+                class="size-full"
+              />
+            </span>
+          </button>
+          <button
+            type="button"
+            class="relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black"
+          >
+            <a
+              target="_blank"
+              href="https://www.kanazawasaryo.jp/"
+              class="absolute left-0 top-0 block size-full"></a>
+            <span
+              class="block size-full py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
+              >徒歩での来店方法</span
+            >
+            <span class="block w-[max(2vw,1rem)] translate-x-[-100%]">
+              <img
+                width="19"
+                height="15"
+                decoding="async"
+                src="/images/chevron-white.svg"
+                alt=""
+                class="size-full"
+              />
+            </span>
+          </button>
         </div>
       </div>
     </div>
   </section>
   <!-- アクセス -->
+  <!-- お知らせ -->
 
   <!-- <ul>
       {
