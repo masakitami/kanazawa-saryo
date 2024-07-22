@@ -21,10 +21,470 @@ const { article } = Astro.props;
 ---
 
 <Layout title="Article" description="test" keyword="test" />
-<div class="px-[4vw] pt-[max(20vw,10rem)]">
-  <p>
-    <img src={article.coverImage.src} alt="" />
+<div class="px-[max(3vw,3rem)] pt-[max(5vw,5rem)]">
+  <p class="mx-auto aspect-video lg:w-[20%]">
+    <img src={article.coverImage.src} class="size-full" alt="" />
   </p>
   <h1>{article.title}</h1>
   <article set:html={article.body} />
 </div>
+
+<div class="p-slider">
+  <ul class="c-slider js-heroSlider">
+    <li class="c-slider__item">
+      <div class="c-slider__transition">
+        <img
+          src="/images/mainvisual_1.png"
+          decoding="async"
+          class="c-slider__image"
+        />
+      </div>
+    </li>
+
+    <li class="c-slider__item">
+      <div class="c-slider__transition">
+        <img
+          src="/images/mainvisual_2.png"
+          alt=""
+          decoding="async"
+          class="c-slider__image"
+        />
+      </div>
+    </li>
+
+    <li class="c-slider__item">
+      <div class="c-slider__transition">
+        <img
+          src="/images/mainvisual_3.png"
+          alt=""
+          decoding="async"
+          class="c-slider__image"
+        />
+      </div>
+    </li>
+
+    <li class="c-slider__item">
+      <div class="c-slider__transition">
+        <img
+          src="/images/mainvisual_4.png"
+          decoding="async"
+          class="c-slider__image"
+        />
+      </div>
+    </li>
+  </ul>
+  <ul class="js-slider__nav"></ul>
+  <div class="js-slider__navPrevNext"></div>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    object-fit: cover;
+  }
+
+  body {
+    background-color: #e7e6e1;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+  }
+
+  .p-slider {
+    padding: 0 0 100px 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    object-fit: cover;
+  }
+
+  body {
+    background-color: #e7e6e1;
+  }
+
+  .p-slider {
+    width: 60%;
+    margin-inline: auto;
+  }
+  .c-slider {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .c-slider__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .c-slider__item {
+    position: relative;
+    z-index: 0;
+  }
+
+  .c-slider__item:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .c-slider__item.is-sliderActive {
+    z-index: 3;
+    animation: fadeIn 1s ease-out both;
+  }
+
+  .is-sliderActive .c-slider__transition {
+    animation-name: zoom;
+    animation-timing-function: linear;
+    /* animation-duration: 6s; */
+  }
+
+  .c-slider__item.is-sliderPrev {
+    z-index: 1;
+  }
+
+  /* .c-slider__item.is-sliderNext {
+  z-index: 1;
+} */
+
+  .c-slider__navList {
+    width: 15%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 767px) {
+    .c-slider__navList {
+      width: 40%;
+    }
+  }
+
+  .c-slider__navButton {
+    background-color: #fff;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+
+  .c-slider__button[data-type='normal'] {
+    background-color: gainsboro;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: 375px) {
+    .c-slider__button[data-type='normal'] {
+      width: 0.85rem;
+      height: 0.85rem;
+    }
+  }
+
+  .c-slider__button[data-type='prev'] {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  .c-slider__button[data-type='next'] {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: blue;
+  }
+
+  .c-slider__button[aria-current~='true'] {
+    background-color: #fff;
+  }
+
+  .c-slider__navButton:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      clip-path: circle(0);
+    }
+
+    100% {
+      clip-path: circle(100%);
+    }
+  }
+</style>
+
+<script>
+  class Slider {
+    constructor(elem, options) {
+      // DOM管理
+      this.DOM = {
+        // スライダーで基本的に使うDOM
+        slider: document.querySelector(elem),
+        // ナビゲーションでページを変えるためのDOM
+        navChangePage: {
+          nav: document.querySelector('.js-slider__nav'),
+          list: {},
+          item: {},
+          button: {},
+        },
+        // 前へボタンと次へボタンでページを変えるためのDOM
+        navPrevNextPage: {
+          nav: document.querySelector('.js-slider__navPrevNext'),
+          prev: {},
+          next: {},
+        },
+      };
+      // スライダー(li要素)を保管する配列
+      this.sliderItems = [];
+      // ナビゲーション(li要素)を保管する配列
+      this.navItems = [];
+      // スライダーの最後のindex値
+      this.sliderLastIndex = null;
+      // スライダーのトータルの数
+      this.sliderTotalNum = null;
+      // 現在のページ（インデックス）
+      this.page = 0;
+      // 前回のページ
+      (this.prevPage = null),
+        // タイマーID(setTimeoutでstartとstopを使うためのキー)
+        (this.timerId = null);
+      // デフォルトオプション
+      this.defaultOptions = {
+        duration: 4000,
+        autoPlay: true,
+        navigation: true,
+        prevAndNext: false,
+      };
+      this.options = Object.assign(this.defaultOptions, options);
+      // ローディング時に実行する関数
+      this._init();
+    }
+
+    // 初期化
+    _init() {
+      // DOMの有無と値をセット
+      this._confirmAndSet();
+
+      // DOMの読み込みが終了したら
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          this._playPage();
+        }, 2000);
+      });
+    }
+
+    // DOMが無い場合はreturn。ある場合は値とDOMをセットして監視対象もここでセットする。
+    _confirmAndSet() {
+      //　スライダーのDOMが無い場合はreturn
+      if (!this.DOM.slider) {
+        return;
+      } else {
+        //　スライダーのDOMがある場合はスライダーの配列とスライダーの数の値をセット
+        this.sliderItems = Array.from(this.DOM.slider.children);
+        this.sliderLastIndex = this.DOM.slider.children.length - 1;
+        this.sliderTotalNum = this.DOM.slider.children.length;
+      }
+
+      //　　"js-slider__nav"がない場合はreturn
+      if (!this.DOM.navChangePage.nav || !this.options.navigation) {
+        return;
+      } else {
+        //　"js-slider"がある場合は値をセット
+        this.DOM.navChangePage.nav.classList.add('c-slider__navList');
+
+        for (let i = 0; i < this.sliderTotalNum; i++) {
+          // liのDOMを作成
+          this.DOM.navChangePage.item = document.createElement('li');
+          this.DOM.navChangePage.item.classList.add('c-slider__navItem');
+
+          // buttonのDOMを作成
+          this.DOM.navChangePage.button = document.createElement('button');
+          this.DOM.navChangePage.button.setAttribute('data-id', i);
+          this.DOM.navChangePage.button.setAttribute('type', 'button');
+          this.DOM.navChangePage.button.setAttribute('data-type', 'normal');
+          this.DOM.navChangePage.button.setAttribute('aria-current', 'false');
+          this.DOM.navChangePage.button.classList.add('c-slider__button');
+
+          // 作成したbuttonとliを全部listにぶち込む
+          this.DOM.navChangePage.item.appendChild(
+            this.DOM.navChangePage.button,
+          );
+
+          //　最後にlistをnavにぶち込む
+          this.DOM.navChangePage.nav.appendChild(this.DOM.navChangePage.item);
+
+          // button１つ１つのクリックイベントを監視する
+          this.DOM.navChangePage.button.addEventListener(
+            'click',
+            this._navChangePage.bind(this),
+            { passive: true },
+          );
+        }
+
+        // ulの中のli要素だけ配列で保管する
+        this.navItems = Array.from(this.DOM.navChangePage.nav.children);
+      }
+
+      if (!this.DOM.navPrevNextPage.nav || !this.options.prevAndNext) {
+        return;
+      } else {
+        const prevButton = (this.DOM.navPrevNextPage.prev =
+          document.createElement('button'));
+        prevButton.setAttribute('type', 'button');
+        prevButton.setAttribute('data-type', 'prev');
+        prevButton.classList.add('c-slider__button');
+        this.DOM.navPrevNextPage.nav.appendChild(prevButton);
+        prevButton.addEventListener('click', this._prevPage.bind(this), {
+          passive: true,
+        });
+
+        const nextButton = (this.DOM.navPrevNextPage.next =
+          document.createElement('button'));
+        nextButton.setAttribute('type', 'button');
+        nextButton.setAttribute('data-type', 'next');
+        nextButton.classList.add('c-slider__button');
+        this.DOM.navPrevNextPage.nav.appendChild(nextButton);
+        nextButton.addEventListener('click', this._nextPage.bind(this), {
+          passive: true,
+        });
+      }
+    }
+
+    _playPage() {
+      //　初期化
+      this._initPage();
+
+      if (this.page <= this.prevPage) {
+        const next = this.page <= 0 ? this.sliderLastIndex : this.page - 1;
+        this.sliderItems[next].classList.add('is-sliderNext');
+        const prev = this.page >= this.sliderLastIndex ? 0 : this.page + 1;
+        this.sliderItems[prev].classList.add('is-sliderPrev');
+      }
+
+      const prev = this.page <= 0 ? this.sliderLastIndex : this.page - 1;
+      this.sliderItems[prev].classList.add('is-sliderPrev');
+      const next = this.page >= this.sliderLastIndex ? 0 : this.page + 1;
+      this.sliderItems[next].classList.add('is-sliderNext');
+
+      // 現在のページに"is-sliderActive"をつける
+      this.sliderItems[this.page].classList.add('is-sliderActive');
+
+      // zoom-inの速度と自動再生のdurationを一緒にする
+      const duration = Math.ceil(this.options.duration / 1000);
+      this.sliderItems[this.page].children[0].style.setProperty(
+        'animation-duration',
+        duration + 's',
+      );
+
+      // 現在のページ番号を格納する.
+      this.prevPage = this.page;
+
+      // タイマー処理
+      if (this.options.autoPlay) {
+        this._startTimer();
+      }
+    }
+
+    _initPage() {
+      // タイマーを1回止める
+      this._stopTimer();
+
+      // buttonのaria-currentを一回全部falseにする
+      this.navItems.forEach((elem) => {
+        elem.children[0].setAttribute('aria-current', 'false');
+      });
+
+      // 指定されたページのbuttonタグのaria-currentはtrueにする
+      this.navItems[this.page].children[0].setAttribute('aria-current', 'true');
+
+      // 全部のli要素の"is-sliderActive"、"is-sliderPrev"、"is-sliderNext"クラスを外す
+      this.sliderItems.forEach((elem) => {
+        elem.classList.contains('is-sliderActive')
+          ? elem.classList.remove('is-sliderActive')
+          : null;
+        elem.classList.contains('is-sliderPrev')
+          ? elem.classList.remove('is-sliderPrev')
+          : null;
+        elem.classList.contains('is-sliderNext')
+          ? elem.classList.remove('is-sliderNext')
+          : null;
+      });
+    }
+
+    _startTimer() {
+      this.timerId = setTimeout(() => {
+        // 最後のページに行ったら最初のページに戻る
+        if (this.page >= this.sliderLastIndex) {
+          this.page = 0;
+        } else {
+          // それ以外は基本的には1クリメントする
+          this.page++;
+        }
+
+        // タイマー処理を繰り返す
+        this._playPage();
+      }, this.options.duration);
+    }
+
+    _stopTimer() {
+      clearTimeout(this.timerId);
+    }
+
+    _navChangePage(e) {
+      this.page = Number(e.currentTarget.getAttribute('data-id'));
+      this._playPage();
+    }
+
+    _nextPage() {
+      this.page = this.page >= this.sliderLastIndex ? 0 : this.page + 1;
+      this._playPage();
+    }
+
+    _prevPage() {
+      this.page = this.page < 1 ? this.sliderLastIndex : this.page - 1;
+
+      this._playPage();
+    }
+  }
+
+  // インスタンス化
+  new Slider('.js-heroSlider', {
+    duration: 4000,
+  });
+</script>
