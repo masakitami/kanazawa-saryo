@@ -34,7 +34,7 @@ const { items: articles } = await newtClient.getContents<Article>({
       </div>
 
       <header
-        class="relative z-10 h-[30svh] whitespace-nowrap pl-[1.5rem] sm:row-auto sm:h-fit sm:translate-y-0 sm:content-normal sm:pb-[6vw] sm:pl-0 sm:text-ks-white sm:mix-blend-difference sm:max-lg:pt-[16vw] md:pr-[max(12vw,3rem)] lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:grid lg:h-auto lg:content-center lg:justify-end lg:py-0"
+        class="relative z-10 h-[30svh] whitespace-nowrap pl-[1.5rem] text-ks-black sm:row-auto sm:h-fit sm:translate-y-0 sm:content-normal sm:pb-[6vw] sm:pl-0 sm:max-lg:pt-[16vw] md:pr-[max(12vw,3rem)] lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:grid lg:h-auto lg:content-center lg:justify-end lg:py-0"
       >
         <h2
           lang="en"
@@ -567,17 +567,20 @@ const { items: articles } = await newtClient.getContents<Article>({
         <div class="flex max-sm:flex-col max-sm:gap-y-[1rem] sm:gap-x-[2.5vw]">
           <button
             type="button"
-            class="relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black"
+            class="relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black"
           >
             <a
               target="_blank"
               href="https://www.kanazawasaryo.jp/"
               class="absolute left-0 top-0 block size-full"></a>
-            <span
-              class="block size-full py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
-              >車・タクシーでの来店方法</span
+            <p
+              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
             >
-            <span class="block w-[max(2vw,1rem)] translate-x-[-100%]">
+              車・タクシーでの来店方法
+            </p>
+            <span
+              class="block w-[max(2vw,1rem)] translate-x-[-100%] self-center"
+            >
               <img
                 width="19"
                 height="15"
@@ -590,17 +593,20 @@ const { items: articles } = await newtClient.getContents<Article>({
           </button>
           <button
             type="button"
-            class="relative grid size-full grid-cols-[1fr,auto] place-items-center bg-ks-black"
+            class="relative grid size-full h-fit grid-cols-[1fr,auto] justify-center bg-ks-black"
           >
             <a
               target="_blank"
               href="https://www.kanazawasaryo.jp/"
               class="absolute left-0 top-0 block size-full"></a>
-            <span
-              class="block size-full py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
-              >徒歩での来店方法</span
+            <p
+              class="block py-[max(1.87vw,1.25rem)] pl-[1em] text-center text-[max(1.33vw,0.88rem)]/[1em] font-[300] text-ks-white lg:text-ks-white"
             >
-            <span class="block w-[max(2vw,1rem)] translate-x-[-100%]">
+              徒歩での来店方法
+            </p>
+            <span
+              class="block w-[max(2vw,1rem)] translate-x-[-100%] self-center"
+            >
               <img
                 width="19"
                 height="15"
