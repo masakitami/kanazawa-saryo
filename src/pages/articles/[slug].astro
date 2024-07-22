@@ -8,7 +8,7 @@ export const getStaticPaths = async () => {
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['title', 'slug', 'body'],
+      select: ['title', 'slug', 'body', 'coverImage'],
     },
   });
   return articles.map((article) => ({
@@ -20,12 +20,8 @@ export const getStaticPaths = async () => {
 const { article } = Astro.props;
 ---
 
-<style>
-  * {
-    color: white;
-  }
-</style>
-
 <Layout title="Article" description="test" keyword="test" />
-<h1>{article.title}</h1>
-<article set:html={article.body} />
+<div class="px-[4vw] pt-[max(20vw,10rem)]">
+  <h1>{article.title}</h1>
+  <article set:html={article.body} />
+</div>

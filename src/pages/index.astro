@@ -8,7 +8,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   appUid: 'blog',
   modelUid: 'article',
   query: {
-    select: ['title', 'slug', 'body'],
+    select: ['title', 'coverImage', 'slug', 'body'],
   },
 });
 ---
@@ -525,7 +525,7 @@ const { items: articles } = await newtClient.getContents<Article>({
   <section id="access">
     <div class="px-c-gutter-x">
       <div class="lg:px-[max(7.6vw,3.37rem)]">
-        <h2 class="max-lg:mb-[2em]">
+        <h2 class="max-lg:mb-[1.5em]">
           <span lang="en" class="title-main">Access</span>
           <span class="title-sub">アクセス</span>
         </h2>
@@ -552,7 +552,7 @@ const { items: articles } = await newtClient.getContents<Article>({
               </li>
             </ul>
           </div>
-          <div class="max-lg:mb-[2em] lg:basis-[65%]">
+          <div class="max-lg:mb-[1.5em] lg:basis-[65%]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3204.153040727107!2d136.6705596757367!3d36.5745296803884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8330bdce1e9e5%3A0x6797b621e2a29e02!2z44CSOTIwLTA4MzIg55-z5bed55yM6YeR5rKi5biC5Y2v6L6w55S644OB77yR77yW4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1721590475328!5m2!1sja!2sjp"
               width="600"
@@ -622,19 +622,58 @@ const { items: articles } = await newtClient.getContents<Article>({
     </div>
   </section>
   <!-- アクセス -->
+  <!-- スペーサー -->
+  <div aria-hidden="true" class="pb-c-gutter-y"></div>
+  <!-- スペーサー -->
+  <!-- お知らせ -->
+  <section id="news">
+    <div class="px-c-gutter-x">
+      <div class="lg:px-[max(7.6vw,3.37rem)]">
+        <h2 class="mb-[max(6.5vw,3rem)] text-center">
+          <span lang="en" class="title-main">News</span>
+          <span class="title-sub">お知らせ</span>
+        </h2>
+        <article>
+          <ul
+            class="grid gap-y-[max(4vw,1.5rem)] sm:grid-cols-2 sm:gap-x-[2.5vw]"
+          >
+            {
+              articles.map((article) => {
+                console.log('article', article);
+                return (
+                  <li class="relative grid grid-cols-[auto,1fr] gap-x-[max(2.1vw,1rem)]">
+                    <a
+                      href={`articles/${article.slug}`}
+                      class=" absolute left-0 top-0 block size-full"
+                    />
+                    <figure class="aspect-[1/1] w-[max(10.3vw,7.62rem)]">
+                      <img
+                        src={article.coverImage.src}
+                        alt=""
+                        class="size-full"
+                      />
+                    </figure>
+                    <p class="text-[max(1.14vw,theme(fontSize.jpTextSm))]/[1.75em]">
+                      {article.title}
+                    </p>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
   <!-- お知らせ -->
 
-  <!-- <ul>
-      {
-        articles.map((article) => {
-          return (
-            <li>
-              <a href={`articles/${article.slug}`}>{article.title}</a>
-            </li>
-          );
-        })
-      }
-    </ul> -->
+  <!-- スペーサー -->
+  <div aria-hidden="true" class="pb-c-gutter-y"></div>
+  <!-- スペーサー -->
+
+  <footer>
+    <div></div>
+  </footer>
 
   <script>
     console.log('記入可能');

@@ -4,6 +4,9 @@ export interface Article {
   title: string;
   slug: string;
   body: string;
+  coverImage: {
+    src: string;
+  };
 }
 
 export const newtClient = createClient({
