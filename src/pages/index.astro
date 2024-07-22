@@ -901,7 +901,7 @@ const { items: articles } = await newtClient.getContents<Article>({
 
     @media (prefers-reduced-motion: no-preference) {
       [data-effect='parallax'] {
-        --range: 200;
+        --range: 150;
         --translate: calc(
           (var(--range) * -1px) + (var(--range) * 2px) * var(--progress, 0)
         );
