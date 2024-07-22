@@ -238,7 +238,7 @@ const { items: articles } = await newtClient.getContents<Article>({
         </header>
         <div class="max-sm:mx-[calc(50%-50vw)] max-sm:w-[100vw]">
           <ol
-            class="flex overflow-x-auto u-no-scrollbar max-sm:mx-[26vw] max-sm:flex-nowrap lg:justify-between max-sm:[&>li]:min-w-[50vw]"
+            class="flex overflow-x-auto u-no-scrollbar max-sm:mx-[26vw] max-sm:flex-nowrap lg:justify-between [&>li]:font-[100] [&>li]:italic max-sm:[&>li]:min-w-[50vw]"
           >
             <li>
               <header class="mb-[2em] text-center">
@@ -410,16 +410,24 @@ const { items: articles } = await newtClient.getContents<Article>({
             />
           </figure>
           <ul
-            class="col-span-7 col-start-3 self-end sm:max-lg:self-center lg:col-span-5 lg:col-start-1 lg:row-span-1 lg:row-start-2"
+            class="col-span-7 col-start-3 self-end sm:max-lg:self-center lg:col-span-5 lg:col-start-1 lg:row-span-1 lg:row-start-2 lg:[&>li]:w-[85%]"
           >
             <li class="mb-[max(1.5vw,1rem)]">
               <img
                 src="/images/price.svg"
+                class="size-full"
+                width="432"
+                height="98"
+                decoding="async"
                 alt="1名様6900円(税込)。器、塗料、お茶の代金が含まれます"
               />
             </li>
             <li>
               <img
+                class="size-full"
+                width="432"
+                height="98"
+                decoding="async"
                 src="/images/three-parts.svg"
                 alt="10時、13時、16時の3部制です。各回6名限定で2時間制。当日予約はお電話にて承ります。"
               />
@@ -621,9 +629,11 @@ const { items: articles } = await newtClient.getContents<Article>({
     </div>
   </section>
   <!-- アクセス -->
+
   <!-- スペーサー -->
   <div aria-hidden="true" class="pb-c-gutter-y"></div>
   <!-- スペーサー -->
+
   <!-- お知らせ -->
   <section id="news">
     <div class="px-c-gutter-x">
@@ -648,6 +658,9 @@ const { items: articles } = await newtClient.getContents<Article>({
                     <figure class="aspect-[1/1] w-[max(10.3vw,7.62rem)]">
                       <img
                         src={article.coverImage.src}
+                        width="165"
+                        height="165"
+                        decoding="async"
                         alt=""
                         class="size-full"
                       />
@@ -671,7 +684,61 @@ const { items: articles } = await newtClient.getContents<Article>({
   <!-- スペーサー -->
 
   <footer>
-    <div></div>
+    <aside class="relative grid h-fit items-center">
+      <a href="" class="absolute left-0 top-0 block size-full"></a>
+      <div
+        class="absolute left-0 top-0 z-[-1] aspect-[400/160] size-full lg:aspect-[1600/480]"
+      >
+        <img
+          src="/images/footer-cv.png"
+          width="1600"
+          height="480"
+          decoding="async"
+          class="size-full"
+          alt="体験申し込みはこちら"
+        />
+      </div>
+      <div class="px-c-gutter-x">
+        <div
+          class="grid grid-cols-[1fr,auto] items-center lg:px-[max(7.6vw,3.37rem)]"
+        >
+          <h2
+            class="size-full py-[max(9vw,2.5rem)] text-ks-white [&>span]:block"
+          >
+            <span lang="en" class="mb-[.1em] text-[max(6vw,2.5rem)]/[1em]"
+              >Reservation</span
+            >
+            <span
+              role="heading"
+              class="text-[max(2.5vw,theme(fontSize.jpTextXs))]"
+              >体験予約をする</span
+            >
+          </h2>
+          <div class="w-[max(8.8vw,3rem)]">
+            <img
+              class="size-full"
+              src="/images/chevron-border-white.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="bg-ks-black px-c-gutter-x">
+      <div
+        class="grid-cols-[auto,auto] lg:px-[max(7.6vw,3.37rem)] lg:marker:grid"
+      >
+        <figure>
+          <img
+            width="322"
+            height="392"
+            src="/images/verticle-white-logo.svg"
+            decoding="async"
+            alt="金沢茶寮"
+          />
+        </figure>
+      </div>
+    </div>
   </footer>
 
   <script>
